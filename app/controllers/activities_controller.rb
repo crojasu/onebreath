@@ -9,26 +9,31 @@ class ActivitiesController < ApplicationController
 
   def new
     @activity = Activity.new
+    @activity.preset_id = params[:preset_id]
   end
 
   def create
     @activity = Activity.new(activity_params)
     @preset = Preset.find(params[:presets_id])
-    @activity.preset = @preset
+    @activity.preset_id = @preset
+    @activity.save
     if @activity.save
-      redirect_to activity_path(@activity)
+      redirect_to s
     else
       render :new
     end
   end
 
-  def destroy
 
+  def destroy
+    @activity = Activity.find(params[:id])
+    @activity.destroy
+    redirect_to activities_path
   end
 
   private
 
   def activity_params
-    params.require(:activity).permit(:name, :preset_id)
+    params.require(:activity).permit(:name)
   end
 end
