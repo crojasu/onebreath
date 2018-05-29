@@ -15,6 +15,11 @@ class PresetsController < ApplicationController
   def create
     @preset = Preset.new(preset_params)
     @preset.user = current_user
+    # if params something
+      # redirect_to #timer screen
+    # else
+      # redirect to new breaks
+    # end
   end
 
   def edit
@@ -38,6 +43,6 @@ class PresetsController < ApplicationController
    private
 
   def preset_params
-    params.require(:preset).permit(:working_day, :focus_timer, :break_duration)
+    params.require(:preset).permit(:name, :working_day, :focus_timer, :break_duration)
   end
 end

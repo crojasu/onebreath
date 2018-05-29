@@ -1,9 +1,8 @@
 <h1>WELCOME</h1>
 
-<li>
-  <ul>
-<%= link_to '25 min one breath', presets_path  %></ul>
-<ul>
-<%= link_to '+', new_preset_path %>
-</ul>
-</li>
+<% @presets.each do |preset| %>
+  <%= link_to preset.name, preset_timer_sessions_path(preset), method: :post  %>
+  <br>
+<% end %>
+<br>
+<%= link_to "+", new_preset_path  %>

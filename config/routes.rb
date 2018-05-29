@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :presets do
     resources :activities
+    resources :timer_sessions, only: [:create]
   end
   resources :breaks, only: [:index, :show, :new, :create]
-  resources :timer_sessions, only: [:index, :show, :new, :create, :destroy]
+  resources :timer_sessions, only: [:index, :show, :destroy]
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

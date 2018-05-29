@@ -4,20 +4,17 @@ class ActivitiesController < ApplicationController
   end
 
   def show
+    @activity = Activity.find(params[:id])
   end
 
   def new
-    @preset = Preset.find(params[:presets_id])
     @activity = Activity.new
   end
 
   def create
     @activity = Activity.new(activity_params)
-    # Linking the models
     @preset = Preset.find(params[:presets_id])
-    @activity.preset = preset.find(params[:presets_id])
-    @activity.user = current_user
-    authorize @activity
+    @activity.preset = @preset
     if @activity.save
       redirect_to activity_path(@activity)
     else
@@ -26,9 +23,12 @@ class ActivitiesController < ApplicationController
   end
 
   def destroy
+
   end
 
+  private
+
   def activity_params
-    params.require(:activity).permit(:)
+    params.require(:activity).permit(:name, :preset_id)
   end
 end
