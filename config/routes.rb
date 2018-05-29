@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  resources :presets
+  resources :presets do
+    resources :activities
+  end
   resources :breaks, only: [:index, :show, :new, :create]
   resources :timer_sessions, only: [:index, :show, :new, :create, :destroy]
 
