@@ -21,4 +21,10 @@ class TimerSessionsController < ApplicationController
 
   def destroy
   end
+
+  private
+
+  def timer_session_params
+    params.require(:timer_session).permit(:ends_at, :starts_at)
+  end
 end
