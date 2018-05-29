@@ -2,6 +2,7 @@
 
 <%= link_to "Start", new_break_path  %>
 <br>
-<%= link_to "End of time", new_break_path  %>
+
+<%= link_to "End of time", new_break_path(timer_session: @timer_session)  %>
 <br>
 <%= link_to "Exit", presets_path  %>
