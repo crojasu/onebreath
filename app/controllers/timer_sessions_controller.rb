@@ -3,16 +3,17 @@ class TimerSessionsController < ApplicationController
   end
 
   def show
-    @timer_session = Timer_session.find(params[:id])
+    @timer_session = TimerSession.find(params[:id])
   end
 
   def new
-    @timer_session = Timer_session.new
+    @timer_session = TimerSession.new
   end
 
   def create
-    @timer_session = Timer_session.create(timer_session_params)
-    if timer_session.save
+    @timer_session = TimerSession.new
+    @timer_session.preset = Preset.find(params[:preset_id])
+    if @timer_session.save
       redirect_to timer_session_path(@timer_session)
     else
       render :new
