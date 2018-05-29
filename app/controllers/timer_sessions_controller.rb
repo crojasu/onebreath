@@ -1,5 +1,6 @@
 class TimerSessionsController < ApplicationController
   def index
+    @presets = Preset.all
   end
 
   def show
