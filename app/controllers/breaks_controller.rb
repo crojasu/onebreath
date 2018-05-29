@@ -1,12 +1,10 @@
 class BreaksController < ApplicationController
   def index
     @breaks = Break.all
-    @presets = Preset.all
   end
 
   def show
     @break = Break.find(params[:id])
-    @preset = Preset.find(params[:id])
   end
 
   def new
@@ -16,6 +14,15 @@ class BreaksController < ApplicationController
 
   def create
     @break = Break.create(break_params)
+    @activity = Activity.find(break_params[:activity_id])
+    @timer_session = TimerSession.find(params[:timer_session_id])
+    @break.timer_session = @timer_session
+    @break.activity = @activity
+    if @break.save
+      redirect_to break_path(@break)
+    else
+      render :new
+    end
   end
 
   def edit
