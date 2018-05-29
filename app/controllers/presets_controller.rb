@@ -20,7 +20,7 @@ class PresetsController < ApplicationController
       timer = TimerSession.create(preset_id: @preset.id)
       redirect_to timer_session_path(timer)
     else
-      redirect_to preset_activities_path(@preset)
+      redirect_to new_preset_activity_path(@preset)
     end
   end
 

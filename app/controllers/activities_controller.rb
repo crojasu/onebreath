@@ -8,18 +8,23 @@ class ActivitiesController < ApplicationController
   end
 
   def new
+    @activities = Activity.all
     @activity = Activity.new
     @preset = Preset.find(params[:preset_id])
   end
 
   def create
+    @activities = Activity.all
     @activity = Activity.new(activity_params)
     @preset = Preset.find(params[:preset_id])
-    @activity.preset_id = @preset
-    @activity.save
-    if @activity.save
-      redirect_to preset_activities(@preset)
+    @activity.preset_id = @preset.id
+
+    if params[:commit] == "done"
+      @activity.save
+      timer = TimerSession.create(preset_id: @preset.id)
+      redirect_to timer_session_path(timer)
     else
+      @activity.save
       render :new
     end
   end
