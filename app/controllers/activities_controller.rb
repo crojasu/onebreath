@@ -1,6 +1,9 @@
 class ActivitiesController < ApplicationController
   def index
-    @activities = Activity.all
+    @preset = Preset.find(params[:preset_id])
+    @activities = @preset.activities
+
+    @activity = Activity.new
   end
 
   def show
@@ -8,13 +11,14 @@ class ActivitiesController < ApplicationController
   end
 
   def new
-    @activities = Activity.all
-    @activity = Activity.new
     @preset = Preset.find(params[:preset_id])
+    @activities = @preset.activities
+    @activity = Activity.new
   end
 
   def create
     @activities = Activity.all
+
     @activity = Activity.new(activity_params)
     @preset = Preset.find(params[:preset_id])
     @activity.preset_id = @preset.id
@@ -25,10 +29,23 @@ class ActivitiesController < ApplicationController
       redirect_to timer_session_path(timer)
     else
       @activity.save
-      render :new
+      respond_to do |format|
+        format.html { render :new }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
     end
   end
 
+  def update
+    @activities = Activity.all
+    @activity = Activity.new
+    @preset = Preset.find(params[:preset_id])
+    @activity.update(activity_params)
+      respond_to do |format|
+        format.html { render :new }
+        format.js  # <-- will render `app/views/reviews/update.js.erb`
+      end
+  end
 
   def destroy
     @activity = Activity.find(params[:id])

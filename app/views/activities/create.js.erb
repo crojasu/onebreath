@@ -1,0 +1,17 @@
+function refreshForm(innerHTML) {
+  const newActivityForm = document.querySelector('.edit_activity');
+  debugger
+  newActivityForm.innerHTML = innerHTML;
+}
+
+function addActivity(activityHTML) {
+  const activity = document.getElementById('activity');
+  activity.insertAdjacentHTML('beforeend', activityHTML);
+}
+
+<% if @activity.errors.any? %>
+  refreshForm('<%= j render "activity/form", preset: @preset, activity: @activity %>');
+<% else %>
+  addActivity('<%= j render "activity/show", activity: @activity %>');
+  refreshForm('<%= j render "activity/form", preset: @preset, activity: Activity.new %>');
+<% end %>

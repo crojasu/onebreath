@@ -15,6 +15,8 @@ class PresetsController < ApplicationController
   def create
     @preset = Preset.new(preset_params)
     @preset.user = current_user
+    # Give default activities
+    # @preset.activities
     @preset.save
     if params[:commit] == "Done"
       timer = TimerSession.create(preset_id: @preset.id)
@@ -34,6 +36,11 @@ class PresetsController < ApplicationController
     @preset = Preset.find(params[:id])
     @preset.update(preset_params)
     redirect_to preset_path(@preset)
+  end
+
+  def update_activities
+    # We update the activities for the given preset
+    # that are sent from presets/:preset_id/activites
   end
 
   def destroy

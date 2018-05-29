@@ -1,14 +1,16 @@
-<%= simple_form_for [@preset, @activity], defaults: { input_html: { class: 'form-control form-inline' } } do |f| %>
-
-<h2><% @activities.each do |activity| %>
-
-
-
-<%= f.input activity.name  , :as => :boolean, input_html: {checked: false} %>
+<%= simple_form_for @preset do |f| %>
+  <% @activities.each do |activity| %>
+  <div class ="activity">
+    <%= f.input activity.name, :as => :boolean, input_html: {checked: false} %>
+  </div>
+  <% end %>
+  <%= f.submit "done" %>
 <% end %>
-<%= f.input :name %>
-  <%= f.submit  "add another activity" %>
-   <%= f.submit "done" %>
+
+
+<%= simple_form_for [@preset, @activity] , defaults: { input_html: { class: 'form-control form-inline' } } do |f| %>
+  <%= f.input :name %>
+  <%= f.submit "add another activity" %>
 <% end %>
 
 
