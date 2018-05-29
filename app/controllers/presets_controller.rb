@@ -15,11 +15,13 @@ class PresetsController < ApplicationController
   def create
     @preset = Preset.new(preset_params)
     @preset.user = current_user
-    # if params something
-      # redirect_to #timer screen
-    # else
-      # redirect to new breaks
-    # end
+    @preset.save
+    if params[:commit] == "Done"
+      timer = TimerSession.create(preset_id: @preset.id)
+      redirect_to timer_session_path(timer)
+    else
+      redirect_to preset_activities_path(@preset)
+    end
   end
 
   def edit

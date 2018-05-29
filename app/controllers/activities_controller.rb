@@ -18,7 +18,8 @@ class ActivitiesController < ApplicationController
     @activity.preset_id = @preset
     @activity.save
     if @activity.save
-      redirect_to s
+      redirect_to preset_activities(@preset)
+
     else
       render :new
     end

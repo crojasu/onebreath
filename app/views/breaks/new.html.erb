@@ -1,7 +1,6 @@
 <h3>What are you doing during your break?</h3>
-<% @activities.each do |activity| %>
-  <%= activity.name  %>
-  <br>
-<% end %>
 
-<%= link_to "Break Finished!", presets_path  %>
+<%= simple_form_for [@preset, @break] do |f| %>
+  <%= f.association :activity %>
+  <%= f.button :submit, name: "timer_session_id", value: params[:timer_session] %>
+<% end %>
