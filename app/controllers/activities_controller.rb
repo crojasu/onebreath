@@ -9,17 +9,16 @@ class ActivitiesController < ApplicationController
 
   def new
     @activity = Activity.new
-    @activity.preset_id = params[:preset_id]
+    @preset = Preset.find(params[:preset_id])
   end
 
   def create
     @activity = Activity.new(activity_params)
-    @preset = Preset.find(params[:presets_id])
+    @preset = Preset.find(params[:preset_id])
     @activity.preset_id = @preset
     @activity.save
     if @activity.save
       redirect_to preset_activities(@preset)
-
     else
       render :new
     end
