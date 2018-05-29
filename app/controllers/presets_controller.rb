@@ -4,6 +4,7 @@ class PresetsController < ApplicationController
   end
 
   def show
+    @preset = Preset.find(params[:id])
   end
 
   def new
@@ -23,11 +24,14 @@ class PresetsController < ApplicationController
   end
 
   def destroy
+    @preset = preset.find(params[:id])
+    @preset.destroy
+    redirect to Presets_path
   end
 
    private
 
   def preset_params
-    params.require(:preset).permit(:working_day, :focus_timer, :break_duration)
+    params.require(:preset).permit(:name, :working_day, :focus_timer, :break_duration)
   end
 end

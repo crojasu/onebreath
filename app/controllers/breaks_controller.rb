@@ -1,14 +1,17 @@
 class BreaksController < ApplicationController
   def index
     @breaks = Break.all
+    @presets = Preset.all
   end
 
   def show
     @break = Break.find(params[:id])
+    @preset = Preset.find(params[:id])
   end
 
   def new
     @break = Break.new
+    @activities = Activity.all
   end
 
   def create
