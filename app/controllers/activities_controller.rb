@@ -2,7 +2,6 @@ class ActivitiesController < ApplicationController
   def index
     @preset = Preset.find(params[:preset_id])
     @activities = @preset.activities
-
     @activity = Activity.new
   end
 
