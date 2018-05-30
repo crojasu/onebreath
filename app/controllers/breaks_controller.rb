@@ -5,6 +5,7 @@ class BreaksController < ApplicationController
 
   def show
     @break = Break.find(params[:id])
+
   end
 
   def new
