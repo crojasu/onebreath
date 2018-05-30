@@ -1,8 +1,10 @@
 <h1>Timer in Progress...</h1>
 
-<%= link_to "Start", new_break_path  %>
+<%= link_to "Start", start_timer_session_path(@timer_session), method: :patch  %>
 <br>
 
 <%= link_to "End of time", new_break_path(timer_session: @timer_session)  %>
 <br>
 <%= link_to "Exit", presets_path  %>
+<br>
+<%= link_to "End", end_timer_session_path(@timer_session), method: :patch  %>
