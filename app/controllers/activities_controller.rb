@@ -1,25 +1,23 @@
 class ActivitiesController < ApplicationController
+  before_action :set_preset, only: [:index, :new, :create, :edit, :update]
+  before_action :set_activity, only: [:show]
+
   def index
-    @preset = Preset.find(params[:preset_id])
-    @activities = @preset.activities#.where(default: false)
+    @activities = @preset.activities
     @activity = Activity.new
-    @default_activities = @preset.activities #.where(default: true)
+    @default_activities = @preset.activities
   end
 
   def show
-    @activity = Activity.find(params[:id])
   end
 
   def new
-    @preset = Preset.find(params[:preset_id])
     @activities = @preset.activities
     @activity = Activity.new
   end
 
   def create
-    @preset = Preset.find(params[:preset_id])
     @activities = @preset.activities
-
     @activity = Activity.new(activity_params)
     @activity.preset = @preset
     @activity.chosen = true
@@ -32,13 +30,11 @@ class ActivitiesController < ApplicationController
   end
 
   def edit
-    @preset = Preset.find(params[:preset_id])
     @activity = Activity.new
     @activities = @preset.activities
   end
 
   def update
-    @preset = Preset.find(params[:preset_id])
     @activities = @preset.activities
     @activity = Activity.new
     if params[:commit] == "done"
@@ -49,12 +45,13 @@ class ActivitiesController < ApplicationController
       @activity.save
       respond_to do |format|
         format.html { render :new }
-        format.js# <-- will render `app/views/reviews/create.js.erb`
+        format.js
       end
     end
   end
 
   def destroy
+    #@preset = Preset.find(params[:presets_id])
     @activity = Activity.find(params[:id])
     @activity.destroy
   end
@@ -63,5 +60,13 @@ class ActivitiesController < ApplicationController
 
   def activity_params
     params.require(:activity).permit(:name)
+  end
+
+  def set_preset
+    @preset = Preset.find(params[:preset_id])
+  end
+
+  def set_activity
+    @activity = Activity.find(params[:id])
   end
 end
