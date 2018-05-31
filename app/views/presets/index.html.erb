@@ -1,9 +1,10 @@
 <h1>WELCOME</h1>
 
 <% @presets.each do |preset| %>
-  <br><%= link_to preset.name, preset_timer_sessions_path(preset), method: :post  %>
-  </br><br>
-   <%= link_to "Edit", edit_preset_path(preset) %>
+<li data-preset-id="<%= preset.id %>">><%= link_to preset.name, preset_timer_sessions_path(preset), method: :post  %> || <%= link_to "delete", preset ,
+      method: :delete,
+      data: { confirm: "Are you sure?" } %> || <%= link_to "Edit", edit_preset_path(preset) %>
+      </li>
 <% end %>
 <br>
 
