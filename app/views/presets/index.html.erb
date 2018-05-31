@@ -1,11 +1,18 @@
-<h1>WELCOME</h1>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4 col-lg-4">
+      <h3>Welcome</h3>
+          <div><% @presets.each do |preset| %>
+              <li data-preset-id="<%= preset.id %>">><%= link_to preset.name, preset_timer_sessions_path(preset), method: :post  %> || <%= link_to "delete", preset ,
+                method: :delete,
+                data: { confirm: "Are you sure?" } %> || <%= link_to "Edit", edit_preset_path(preset) %>
+              </li>
+                 <% end %>
+               <br>
+              <%= link_to "+", new_preset_path  %>
+           </div>
+    </div>
+  </div>
+</div>
 
-<% @presets.each do |preset| %>
-<li data-preset-id="<%= preset.id %>">><%= link_to preset.name, preset_timer_sessions_path(preset), method: :post  %> || <%= link_to "delete", preset ,
-      method: :delete,
-      data: { confirm: "Are you sure?" } %> || <%= link_to "Edit", edit_preset_path(preset) %>
-      </li>
-<% end %>
-<br>
 
-<%= link_to "+", new_preset_path  %>

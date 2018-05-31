@@ -19,7 +19,7 @@ class PresetsController < ApplicationController
     @preset.save
     if params[:commit] == "Done"
       timer = TimerSession.create(preset_id: @preset.id)
-      redirect_to preset_path
+      redirect_to presets_path
     else
       redirect_to new_preset_activity_path(@preset)
     end

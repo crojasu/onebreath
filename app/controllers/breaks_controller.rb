@@ -5,6 +5,13 @@ class BreaksController < ApplicationController
 
   def show
     @break = Break.find(params[:id])
+    @artists = RSpotify::Artist.search('shakira')
+    @albums = RSpotify::Album.search('shakira')
+    @tracks = RSpotify::Track.search('shakira')
+    @cancion = @tracks.first.uri
+
+    #if activity = activity.id
+
 
   end
 
