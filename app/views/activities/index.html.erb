@@ -1,21 +1,4 @@
-<h1>Chose an activity</h1>
-<h2><% @activities.each do |activity| %>
-  <%= activity.name  %>
-<% end %>
-</h2>
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-6">
-      <h3>Make a New Activity </h3>
-      <div class="form-group">
-        <%= link_to "+", new_preset_activity_path(params[:preset_id]) %>
-      </div>
-    </div>
-  </div>
-</div>
-
-<%= render 'form' %>
+<h1>Here are all the breaks you can define for your day</h1>
 
 
-
-
+<%= render "form" %>
