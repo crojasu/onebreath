@@ -8,8 +8,7 @@
 <ul>
 <% @preset.activities.each do |activity| %>
   <li data-activity-id="<%= activity.id %>"><%= activity.name %> - <%= link_to "delete", activity,
-      method: :delete,
-      data: { confirm: "Are you sure?" } %>
+      method: :delete, remote: true  %>
 <% end %>
 </ul>
 

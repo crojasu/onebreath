@@ -1,6 +1,6 @@
 class ActivitiesController < ApplicationController
-  before_action :set_preset, only: [:index, :new, :create, :edit, :update ]
-  before_action :set_activity, only: [:show, :destroy]
+  before_action :set_preset, only: [:index, :new, :create, :edit, :update]
+  before_action :set_activity, only: [:show]
 
   def index
     @activities = @preset.activities
@@ -51,9 +51,9 @@ class ActivitiesController < ApplicationController
   end
 
   def destroy
+    #@preset = Preset.find(params[:presets_id])
     @activity = Activity.find(params[:id])
     @activity.destroy
-    redirect_to preset_path
   end
 
   private
