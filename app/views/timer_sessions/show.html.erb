@@ -1,10 +1,35 @@
+
 <h1>Timer in Progress...</h1>
 
-<%= link_to "Start", start_timer_session_path(@timer_session), method: :patch  %>
+<%= link_to "Start", start_timer_session_path(@timer_session), method: :patch, remote: true  %>
 <br>
 
-<%= link_to "End of time", new_break_path(timer_session: @timer_session)  %>
+<%= link_to "End of time", new_timer_session_break_path(@timer_session)  %>
 <br>
 <%= link_to "Exit", presets_path  %>
 <br>
 <%= link_to "End", end_timer_session_path(@timer_session), method: :patch  %>
+<br>
+<%if @timer_session.starts_at != nil %>
+  <%= (Time.now - @timer_session.starts_at).round(2) %>
+  <%= "seconds" %>
+<% end %>
+<br>
+<%if @timer_session.starts_at != nil %>
+  <%if Time.now - @timer_session.starts_at >= @timer_session.preset.focus_timer %>
+    <%= "Break time!"%>
+    <br>
+  <% end %>
+<% end %>
+<%if @timer_session.starts_at != nil %>
+  <%if Time.now - @timer_session.starts_at >= @timer_session.preset.focus_timer %>
+  <!--   <script type="text/javascript">
+      window.location.href ="/breaks/new?timer_session=60"
+    </script> -->
+    <br>
+ <% end %>
+<% end %>
+<div id="timer" data-limit="<%= @timer_session.preset.string_duration %>" data-sessionid="<%= @timer_session.id %>">
+  00:00:00
+</div>
+<%= javascript_pack_tag 'easytimer' %>
