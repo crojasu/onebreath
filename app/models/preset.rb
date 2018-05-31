@@ -13,7 +13,7 @@ class Preset < ApplicationRecord
     hours = total_seconds / (60 * 60)
 
     format("%02d:%02d:%02d", hours, minutes, seconds) #=> "01:00:00"
-    "00:00:10"
+    "00:00:05"
   end
 
   private
@@ -24,3 +24,4 @@ class Preset < ApplicationRecord
    end
   end
  end
+
