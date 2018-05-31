@@ -12,7 +12,7 @@ $base-font: "Raleway", "Roboto", "sans-serif";
 //To use a font file (.woff) uncomment following lines
 @font-face {
   font-family: "Raleway";
-  src: font-url('Raleway.ttf');
+  src: font-url('../fonts/Raleway.ttf');
 
 }
 $my-font: "Font Name";
