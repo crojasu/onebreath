@@ -1,14 +1,22 @@
-<% require 'rspotify' %>
 
-
-<%= @break.id %>
 
 <h1>Enjoy your break!</h1>
-<h2>want to implement a timer session here</h2>
-<h2>link back to focus timer after this</h2>
-<h3>@break.duration to call 00:00:00 format of break timer</h3>
-<%= @break.id %>
+<%= link_to "Start", break_path(@break), method: :patch, remote: true  %>
+<br>
+<%= link_to "Exit", presets_path  %>
+
+<%= @break.duration %>
+<%= javascript_pack_tag 'easytimer' %>
+<br>
+<div id="timer" data-limit="<%= @break.timer_session.preset.string_duration %>" data-sessionid="<%= @break.timer_session.id %>" data-break="<%= @break.id %>">
+  00:00:00
+</div>
+<%= javascript_pack_tag 'easytimer' %>
+<%= @break.length %>
+
+<h1>Enjoy your break!</h1>
 
 <h1>Chose some music recomended for your break activity</h1>
 
 <iframe src="https://open.spotify.com/embed?uri=<%= @cancion %>" width="100%" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+

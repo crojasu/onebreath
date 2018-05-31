@@ -16,8 +16,8 @@ class Preset < ApplicationRecord
     minutes = (total_seconds / 60) % 60
     hours = total_seconds / (60 * 60)
 
-    format("%02d:%02d:%02d", hours, minutes, seconds) #=> "01:00:00"
-    "00:00:10"
+    format("%02d:%02d:%02d", hours, seconds, minutes) #=> "01:00:00"
+
   end
 
   private
@@ -26,5 +26,6 @@ class Preset < ApplicationRecord
     ["Meditation", "Social Media", "Reading"].each do |act|
       Activity.create(name: act, chosen: true, preset: self)
    end
+  end
  end
-end
+
