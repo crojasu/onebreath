@@ -2,6 +2,7 @@ class PresetsController < ApplicationController
   before_action :set_preset, only: [:show, :edit, :udpate]
   before_action :set_user, only: [:new, :edit ]
 
+
   def index
     @presets = Preset.all
   end
@@ -11,18 +12,22 @@ class PresetsController < ApplicationController
 
   def new
     @preset = Preset.new
+    @navbar_render
   end
 
   def create
     @preset = Preset.new(preset_params)
     @preset.user = current_user
-    @preset.save
-    if params[:commit] == "Done"
-      timer = TimerSession.create(preset_id: @preset.id)
-      redirect_to presets_path
+    if @preset.save
+      if params[:commit] == "Done"
+        timer = TimerSession.create(preset_id: @preset.id)
+        redirect_to presets_path
+      else
+        redirect_to new_preset_activity_path(@preset)
+      end
     else
-      redirect_to new_preset_activity_path(@preset)
-    end
+    render :new
+  end
   end
 
   def edit

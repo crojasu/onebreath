@@ -3,6 +3,10 @@ class Preset < ApplicationRecord
   has_many :activities,  dependent: :destroy
   has_many :timer_sessions, dependent: :delete_all
   has_many :breaks, through: :timer_sessions , dependent: :destroy
+  #validates :activity, presence: true
+  validates :working_day, presence: true
+  validates :focus_timer, presence: true
+  validates :break_duration, presence: true
 
   after_create :populate_default_activities
 
