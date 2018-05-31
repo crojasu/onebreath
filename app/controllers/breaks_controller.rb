@@ -6,6 +6,7 @@ class BreaksController < ApplicationController
   end
 
   def show
+    @navbar_render = true
     @activity = Break.find(params[:id]).activity.name
     @break = Break.find(params[:id])
     @artists = RSpotify::Artist.search(@activity)
@@ -15,7 +16,7 @@ class BreaksController < ApplicationController
   end
 
   def new
-    @navbar_render
+    @navbar_render = true
     @break = Break.new
     @timersession = TimerSession.find(params[:timer_session_id])
     @preset_id = @timersession.preset_id

@@ -4,7 +4,7 @@ class PresetsController < ApplicationController
 
   def index
     @presets = Preset.all
-    @navbar_render
+    @navbar_render = true
   end
 
   def show
@@ -12,7 +12,7 @@ class PresetsController < ApplicationController
 
   def new
     @preset = Preset.new
-    @navbar_render
+    @navbar_render = true
   end
 
   def create
