@@ -22,4 +22,5 @@ class Preset < ApplicationRecord
     ["Meditation", "Social Media", "Reading"].each do |act|
       Activity.create(name: act, chosen: true, preset: self)
    end
+ end
 end
