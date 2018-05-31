@@ -3,6 +3,10 @@ class Preset < ApplicationRecord
   has_many :activities,  dependent: :destroy
   has_many :timer_sessions, dependent: :delete_all
   has_many :breaks, through: :timer_sessions , dependent: :destroy
+  #validates :activity, presence: true
+  validates :working_day, presence: true
+  validates :focus_timer, presence: true
+  validates :break_duration, presence: true
 
   after_create :populate_default_activities
 
@@ -12,8 +16,8 @@ class Preset < ApplicationRecord
     minutes = (total_seconds / 60) % 60
     hours = total_seconds / (60 * 60)
 
-    format("%02d:%02d:%02d", hours, minutes, seconds) #=> "01:00:00"
-    "00:00:05"
+    format("%02d:%02d:%02d", hours, seconds, minutes) #=> "01:00:00"
+
   end
 
   private
