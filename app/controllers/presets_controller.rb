@@ -12,6 +12,7 @@ class PresetsController < ApplicationController
 
   def new
     @preset = Preset.new
+    @navbar_render
   end
 
   def create

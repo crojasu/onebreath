@@ -15,9 +15,12 @@ class BreaksController < ApplicationController
   end
 
   def new
+    @navbar_render
     @break = Break.new
-    @timer_session = TimerSession.find(params[:timer_session_id])
-    @activities = Activity.all
+    @timersession = TimerSession.find(params[:timer_session_id])
+    @preset_id = @timersession.preset_id
+    @preset = Preset.find(@preset_id)
+    @activity = @preset.activities
   end
 
   def create
