@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   end
   resources :start_timer_sessions, only: [:update]
   resources :end_timer_sessions, only: [:update]
-
+  resources :activities, only: :destroy
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
