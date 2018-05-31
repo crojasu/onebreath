@@ -18,5 +18,6 @@ class Preset < ApplicationRecord
   def populate_default_activities
     ["Meditation", "Social Media", "Reading"].each do |act|
       Activity.create(name: act, chosen: true, preset: self)
-   end
+    end
+  end
 end

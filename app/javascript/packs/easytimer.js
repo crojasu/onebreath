@@ -2,10 +2,14 @@ import Timer from 'easytimer'
 
 function redirectToBreakNew(timer) {
   if(targetAchieved(timer)){
-    console.log("redirect break");
-    const id = document.getElementById("timer").dataset.sessionid
-    console.log(`/timer_sessions/${id}/breaks/new`)
-    window.location.href =`/timer_sessions/${id}/breaks/new`
+    const dataSetTimer = document.getElementById("timer").dataset
+    const idSession = dataSetTimer.sessionid
+    const idBreak = dataSetTimer.break
+    if (idBreak) {
+      window.location.href = `/timer_sessions/${idSession}`
+    } else {
+      window.location.href =`/timer_sessions/${idSession}/breaks/new`
+    }
   }
 
   // rediredctio to break new
@@ -28,3 +32,4 @@ function startTimerSession() {
   });
 }
 global.startTimerSession = startTimerSession
+
