@@ -1,6 +1,9 @@
 class Preset < ApplicationRecord
   belongs_to :user
-  has_many :activities
+  has_many :activities,  dependent: :destroy
+  has_many :timer_sessions, dependent: :delete_all
+  has_many :breaks, through: :timer_sessions , dependent: :destroy
+
   after_create :populate_default_activities
 
   def string_duration
@@ -20,4 +23,4 @@ class Preset < ApplicationRecord
       Activity.create(name: act, chosen: true, preset: self)
    end
   end
-end
+ end
