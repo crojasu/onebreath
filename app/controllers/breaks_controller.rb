@@ -6,8 +6,12 @@ class BreaksController < ApplicationController
   end
 
   def show
+    @activity = Break.find(params[:id]).activity.name
     @break = Break.find(params[:id])
-
+    @artists = RSpotify::Artist.search(@activity)
+    @albums = RSpotify::Album.search(@activity)
+    @tracks = RSpotify::Track.search(@activity)
+    @cancion = @tracks.first.uri
   end
 
   def new
@@ -31,7 +35,6 @@ class BreaksController < ApplicationController
   end
 
   def edit
-
   end
 
   def update

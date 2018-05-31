@@ -21,4 +21,5 @@ module Onebreath
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
   end
+  RSpotify::authenticate("ea163136c912496a99620b69dfa33d79", "0b5fb1cfe499466d8d1aa1a49ac5ae14")
 end

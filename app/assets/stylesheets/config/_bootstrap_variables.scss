@@ -6,16 +6,24 @@
 // General style
 $font-family-sans-serif:  $body-font;
 $headings-font-family:    $headers-font;
-$body-bg:                 $light-gray;
-$font-size-base: 18px;
+$body-bg:                 $bg-blue;
+$font-size-base: 16px;
 
 // Colors
-$gray-base:       $gray;
-$brand-primary:   $blue;
+$gray-base:       $font-white;
+$brand-primary:   $button-green;
 $brand-success:   $green;
 $brand-info:      $yellow;
 $brand-danger:    $red;
 $brand-warning:   $orange;
+
+$bg-blue: #11476E;
+$button-green: #16BA89;
+$timer-green: #1EFFBC;
+$font-black: #000000;
+$font-white: #FFFAF9;
+$light-gray: #F4F4F4;
+
 
 // Buttons & inputs' radius
 $border-radius-base:  2px;

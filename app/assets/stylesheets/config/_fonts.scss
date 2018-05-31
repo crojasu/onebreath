@@ -1,9 +1,19 @@
-// Import Google fonts
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700');
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
-
+// Import Fontawesome
+@import url("https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous");
 // Define fonts for body and headers
-$body-font: "Open Sans", "Helvetica", "sans-serif";
-$headers-font: "Raleway", "Helvetica", "sans-serif";
+$body-font: "Raleway", "Roboto", "sans-serif";
+$headers-font: "Raleway", "Roboto", "sans-serif";
+$base-font: "Raleway", "Roboto", "sans-serif";
+//To use a font file (.woff) uncomment following lines
+@font-face {
+  font-family: "Raleway";
+  src: font-url('../fonts/Raleway.ttf');
+}
+
+$my-font: "Font Name";
+
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
@@ -13,4 +23,3 @@ $headers-font: "Raleway", "Helvetica", "sans-serif";
 //        font-url('FontFile.woff') format('woff'),
 //        font-url('FontFile.ttf') format('truetype')
 // }
-// $my-font: "Font Name";

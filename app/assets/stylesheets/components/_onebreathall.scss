@@ -1,0 +1,124 @@
+
+// Buttons defaults
+.btn {
+    border: 1 solid;
+    letter-spacing: 1px;
+    // text-transform: uppercase;
+    border-radius: 10px;
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
+}
+
+.btn-primary {
+    background: $button-green;
+    color: #ffffff;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background: #33a6cc;
+}
+
+.btn-primary:active, .btn-primary.active {
+    background: #007299;
+    box-shadow: none;
+}
+
+// Links
+.a {
+
+}
+
+
+
+// headers
+
+h1 {
+  font-size: 32px;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: lighter;
+  margin-bottom:10px;
+}
+
+p {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+
+// Custom Classes
+.title-box {
+margin-top: 20px;
+margin-bottom: 20px;
+}
+
+.sub-title-box {
+margin-bottom: 80px;
+}
+
+.middle-content {
+  margin-bottom: 40px;
+}
+
+
+.action-buttons-box
+{
+  margin-bottom: 20px;
+}
+
+// Buttons Custom
+.resume {
+  width: 175px;
+  height:45px;
+  font-size: 24px;
+}
+
+.rexit {
+  width: 175px;
+  height:45px;
+  font-size: 24px;
+  background-color:$font-white;
+  border-color: $button-green;
+  color: $button-green;
+}
+
+.sign-in {
+  width: 175px;
+  height:45px;
+  font-size: 16px;
+  background-color:$button-green;
+  font-color: $font-white;
+}
+
+.sign-in-fb {
+  width: 175px;
+  height:45px;
+  font-size: 16px;
+  color: #16BA89;
+  background-color:$font-white;
+  border-color: $button-green;
+}
+
+.flow-selected {
+  width: 137px;
+  height:35px;
+  opacity:0.8;
+  font-size: 16px;
+
+}
+
+.flow-not-selected {
+  width: 137px;
+  height:35px;
+  background-color:$font-white;
+  border-color: $button-green;
+  font-size: 16px;
+}
+
+
+
