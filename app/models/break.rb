@@ -1,6 +1,7 @@
 class Break < ApplicationRecord
   belongs_to :timer_session
   belongs_to :activity
+  validates :activity, presence: true
 
   def duration
     min = timer_session.preset.break_duration
