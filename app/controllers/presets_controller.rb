@@ -31,6 +31,7 @@ class PresetsController < ApplicationController
   end
 
   def edit
+    @navbar_render = true
   end
 
   def update
