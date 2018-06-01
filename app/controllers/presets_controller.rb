@@ -19,9 +19,9 @@ class PresetsController < ApplicationController
     @preset = Preset.new(preset_params)
     @preset.user = current_user
     if @preset.save
-      if params[:commit] == "Done"
+      if params[:commit] == "Start Timer"
         timer = TimerSession.create(preset_id: @preset.id)
-        redirect_to presets_path
+        timer_session_path(timer)
       else
         redirect_to new_preset_activity_path(@preset)
       end
@@ -36,10 +36,10 @@ class PresetsController < ApplicationController
 
   def update
     @preset = Preset.find(params[:id])
-    if params[:commit] == "Done"
+    if params[:commit] == "Start Timer"
       @preset.update(preset_params)
       timer = TimerSession.create(preset_id: @preset.id)
-      redirect_to presets_path
+      redirect_to timer_session_path(timer)
     elsif params[:commit] == "done editing breaks"
         params[:preset].each do |activity, value_checked|
         if value_checked == "0"
