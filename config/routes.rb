@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
   resources :breaks, only: [:index, :show, :update]
   resources :timer_sessions, only: [:index, :show, :destroy] do
-    resources :breaks, only: [:new, :create]
+    resources :breaks, only: [:new, :create, :show]
   end
   resources :start_timer_sessions, only: [:update]
   resources :end_timer_sessions, only: [:update]

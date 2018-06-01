@@ -1,8 +1,26 @@
-<h3>What are you doing during your break?</h3>
+<div class="container text-center">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <div class="title-box">
+        <h1>One Breath</h1>
+      </div>
+    </div>
+  </div>
 
-<%= simple_form_for [@timer_session, @break] do |f| %>
-  <%= f.association :activity %>
-  <%= f.button :submit, name: "timer_session_id", value: params[:timer_session] %>
-<% end %>
-<%= render 'shared/navbar' %>
-
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <div class="sub-title-box">
+        <h3>What are you doing during your break?</h3>
+      </div>
+    </div>
+  </div>
+  <% @preset.activities.each do |act| %>
+    <% @break.activity = act %>
+    <%= simple_form_for [@timersession, @break] do |f| %>
+      <%= f.association :activity, as: :hidden, value_method: :id %>
+      <%= f.button :submit, value: act.name %>
+    <% end %>
+  <% end %>
+  </div>
+  </div>
+</div>

@@ -21,7 +21,6 @@ class ActivitiesController < ApplicationController
     @activity = Activity.new(activity_params)
     @activity.preset = @preset
     @activity.chosen = true
-
     if @activity.save
       redirect_to preset_activities_path(@preset)
     else

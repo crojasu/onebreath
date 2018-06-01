@@ -2,9 +2,9 @@ class PresetsController < ApplicationController
   before_action :set_preset, only: [:show, :edit, :udpate]
   before_action :set_user, only: [:new, :edit ]
 
-
   def index
     @presets = Preset.all
+    @navbar_render = true
   end
 
   def show
@@ -12,6 +12,7 @@ class PresetsController < ApplicationController
 
   def new
     @preset = Preset.new
+    @navbar_render = true
   end
 
   def create
@@ -30,6 +31,7 @@ class PresetsController < ApplicationController
   end
 
   def edit
+    @navbar_render = true
   end
 
   def update
