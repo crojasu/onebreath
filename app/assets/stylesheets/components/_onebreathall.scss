@@ -143,6 +143,9 @@ margin-bottom: 80px;
 .whiteicon {
   color: $font-white;
 }
+.whiteicon:hover {
+  color: $timer-green;
+}
 
 .circlediv {
   border: 5px solid;
