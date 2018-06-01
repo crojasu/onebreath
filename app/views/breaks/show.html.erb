@@ -10,7 +10,7 @@
 <br>
 <div id="timer"  data-sessionid="<%= @break.timer_session.id %>" data-break="<%= @break.id %>" data-breaklimit="<%= @break.length %>"<%= @break.id %>
 </div>
-<%= javascript_pack_tag 'easytimer' %>
+
 <%= @break.length %>
 
 <h1>Enjoy your break!</h1>
@@ -19,3 +19,4 @@
 
 <iframe src="https://open.spotify.com/embed?uri=<%= @cancion %>" width="100%" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 
+<%= javascript_pack_tag 'easytimer' %>
