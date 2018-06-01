@@ -13,17 +13,16 @@
       </div>
     </div>
   </div>
- <div class="col-xs-8 col-xs-offset-2 col-md-4 col-md-offset-4 middle-content">
+ <div class="col-xs-8 col-xs-offset-2 col-md-4 col-md-offset-4">
     <div class="middle-content">
-       <div class="presets-box">
          <% @presets.each do |preset| %>
-         <%= link_to preset.name, preset_timer_sessions_path(preset), method: :post, :class=> "btn btn-primary flow-selected"%>
-      </div>
-      <div class="presets-box">
-         <%= link_to 'delete', preset , method: :delete,
-         data: { confirm: "Are you sure?" } %>
-         || <%= link_to 'edit', edit_preset_path(preset)%>
-         <% end %>
+           <div class="presets-box">
+           <%= link_to preset.name, preset_timer_sessions_path(preset), method: :post, :class=> "btn btn-primary flow-selected"%>
+           <br>
+           <%= link_to 'delete', preset , method: :delete,
+           data: { confirm: "Are you sure?" } %>
+           || <%= link_to 'edit', edit_preset_path(preset)%>
+          <% end %>
       </div>
 
       <div class="presets-box">
