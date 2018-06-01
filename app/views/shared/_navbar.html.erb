@@ -7,11 +7,12 @@
     <%= link_to "#" do %> <!-- path is not working: " timer_session_path(@timer_session) " -->
       <i class="far fa-clock"></i>
     <% end %>
-    <%= link_to "#" do %>
+     <%= link_to "#" do %>
       <i class="fas fa-chart-line"></i>
     <% end %>
-    <%= link_to "#" do %>
+    <%= link_to destroy_user_session_path, :method => :delete do %>
       <i class="far fa-user"></i>
     <% end %>
   </div>
 </div>
+

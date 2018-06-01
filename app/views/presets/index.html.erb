@@ -16,5 +16,7 @@
 </div>
 <%= link_to "+", new_preset_path  %>
 
+<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+
 <%= render 'shared/navbar' %>
 
