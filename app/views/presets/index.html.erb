@@ -1,20 +1,37 @@
-<div class="container-fluid">
+<div class="container text-center">
   <div class="row">
-    <div class="col-md-4 col-lg-4">
-      <h3>Welcome</h3>
-          <div><% @presets.each do |preset| %>
-              <li data-preset-id="<%= preset.id %>">><%= link_to preset.name, preset_timer_sessions_path(preset), method: :post  %> || <%= link_to "delete", preset ,
-                method: :delete,
-                data: { confirm: "Are you sure?" } %> || <%= link_to "Edit", edit_preset_path(preset) %>
-              </li>
-                 <% end %>
-               <br>
-              <%= link_to "+", new_preset_path  %>
-           </div>
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <div class="title-box">
+        <h1>Welcome</h1>
+      </div>
     </div>
   </div>
-</div>
-<%= link_to "+", new_preset_path  %>
+
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <div class="sub-title-box">
+        <p>hola loco</p>
+      </div>
+    </div>
+  </div>
 
 <%= render 'shared/navbar' %>
+  <% @presets.each do |preset| %>
+  <div class="col-xs-12 col-md-6 col-md-offset-3">
+    <div class="action-buttons-box">
+     <%= link_to preset.name, preset_timer_sessions_path(preset), method: :post, :class=> "btn btn-primary resume"%>
+   </div>
+   <%= link_to 'delete', preset , method: :delete,
+   data: { confirm: "Are you sure?" } %>
+   || <%= link_to 'edit', edit_preset_path(preset)%>
+ </div>
+<% end %>
 
+<div class="col-xs-12 col-md-6 col-md-offset-3">
+  <div class="action-buttons-box">
+    <%= link_to "+", new_preset_path, :class=> "btn btn-primary resume" %>
+  </div>
+</div>
+</div>
+
+<i class="fas fa-minus-circle"></i><i class="far fa-edit"></i>
