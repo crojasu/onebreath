@@ -64,6 +64,10 @@ margin-bottom: 80px;
 .middle-content {
   margin-bottom: 40px;
 }
+.presets-box {
+  margin-bottom: 10px;
+
+}
 
 
 .action-buttons-box
@@ -113,11 +117,12 @@ margin-bottom: 80px;
 
 }
 
-.flow-not-selected {
+.flow-unselected {
   width: 137px;
   height:35px;
   background-color:$font-white;
   border-color: $selectblue;
+  color: $selectblue;
   font-size: 16px;
 }
 
