@@ -26,7 +26,7 @@ class BreaksController < ApplicationController
 
   def create
     @break = Break.new(break_params)
-    @timer_session = TimerSession.find(params[:timer_session_id])
+    @timersession = TimerSession.find(params[:timer_session_id])
     @activity = Activity.find(break_params[:activity_id])
     @break.timer_session = @timer_session
     @break.activity = @activity
