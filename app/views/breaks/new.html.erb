@@ -14,15 +14,13 @@
       </div>
     </div>
   </div>
+  <% @preset.activities.each do |act| %>
+    <% @break.activity = act %>
     <%= simple_form_for [@timersession, @break] do |f| %>
-    <%= f.association :activity %>
-    <%= f.button :submit, name: "timer_session_id", value: params[:timer_session] %>
+      <%= f.association :activity, as: :hidden, value_method: :id %>
+      <%= f.button :submit, value: act.name %>
     <% end %>
+  <% end %>
   </div>
   </div>
 </div>
-
-
-
-
-

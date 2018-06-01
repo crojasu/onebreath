@@ -16,21 +16,16 @@ class BreaksController < ApplicationController
   end
 
   def new
-    @activity = Activity.all
     @navbar_render = true
-    @break = Break.new
     @timersession = TimerSession.find(params[:timer_session_id])
-    @preset_id = @timersession.preset_id
-    @preset = Preset.find(@preset_id)
-
+    @break = Break.new
+    @preset = Preset.find(@timersession.preset_id)
   end
 
   def create
     @break = Break.new(break_params)
-    @timersession = TimerSession.find(params[:timer_session_id])
-    @activity = Activity.find(break_params[:activity_id])
+    @timer_session = TimerSession.find(params[:timer_session_id])
     @break.timer_session = @timer_session
-    @break.activity = @activity
     @break.length = @timer_session.preset.break_duration
     if @break.save
       redirect_to break_path(@break)
