@@ -23,7 +23,7 @@
    </div>
    <%= link_to 'delete', preset , method: :delete,
    data: { confirm: "Are you sure?" } %>
-   || <%= link_to 'edit', edit_preset_path(preset)%>
+    <%= link_to 'edit', edit_preset_path(preset)%>
  </div>
 <% end %>
 
@@ -33,5 +33,3 @@
   </div>
 </div>
 </div>
-
-<i class="fas fa-minus-circle"></i><i class="far fa-edit"></i>

@@ -1,6 +1,9 @@
 
 <h1>Timer in Progress...</h1>
 
+<div id="timer" data-limit="<%= @timer_session.preset.focus_timer %>" data-sessionid="<%= @timer_session.id %>">
+  00:00:00
+</div>
 
 <%= link_to "Start", start_timer_session_path(@timer_session), method: :patch, remote: true  %>
 <br>
@@ -30,8 +33,5 @@
     <br>
  <% end %>
 <% end %>
-<div id="timer" data-limit="<%= @timer_session.preset.focus_timer %>" data-sessionid="<%= @timer_session.id %>">
-  00:00:00
-</div>
 <%= javascript_pack_tag 'easytimer' %>
 
