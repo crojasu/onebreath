@@ -20,8 +20,7 @@
       <%= @break.duration %>
       <%= javascript_pack_tag 'easytimer' %>
       <br>
-      <div id="timer" data-limit="<%= @break.timer_session.preset.string_duration %>" data-sessionid="<%= @break.timer_session.id %>" data-break="<%= @break.id %>">
-        00:00:00
+      <div id="timer"  data-sessionid="<%= @break.timer_session.id %>" data-break="<%= @break.id %>" data-breaklimit="<%= @break.length %>"><%= @break.id %>
       </div>
       <%= javascript_pack_tag 'easytimer' %>
       <%= @break.length %>
