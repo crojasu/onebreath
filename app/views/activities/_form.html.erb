@@ -1,4 +1,4 @@
-<h1>Add yours</h1>
+<h2>Add an activity to the list</h2>
 
 <%= simple_form_for [@preset, @activity] , defaults: { input_html: { class: 'form-control form-inline' } } do |f| %>
   <%= f.input :name %>
@@ -13,4 +13,4 @@
 </ul>
 
 
-<%= link_to "I'm done", presets_path %>
+<%= link_to "Save your preset", presets_path %>
