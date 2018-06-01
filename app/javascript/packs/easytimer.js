@@ -31,7 +31,6 @@ function targetAchieved(timer) {
 }
 
 function startTimerSession() {
-
   const timer = new Timer();
   timer.start();
   timer.addEventListener('secondsUpdated', function (e) {
