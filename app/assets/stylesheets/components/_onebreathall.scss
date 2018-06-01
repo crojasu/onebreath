@@ -27,7 +27,7 @@
 
 // Links
 .a {
-
+  font-color:$font-white;
 }
 
 
@@ -63,6 +63,9 @@ margin-bottom: 80px;
 
 .middle-content {
   margin-bottom: 40px;
+}
+.presets-box {
+  margin-bottom: 10px;
 }
 
 
@@ -105,7 +108,7 @@ margin-bottom: 80px;
 }
 
 .flow-selected {
-  width: 137px;
+  width: 150px;
   height:35px;
   opacity:0.8;
   font-size: 16px;
@@ -113,12 +116,39 @@ margin-bottom: 80px;
 
 }
 
-.flow-not-selected {
-  width: 137px;
+.flow-unselected {
+  width: 150px;
   height:35px;
   background-color:$font-white;
   border-color: $selectblue;
+  color: $selectblue;
   font-size: 16px;
+}
+
+// Timer
+
+.timerfont {
+  display:flex;
+  align-items:center;
+  justify-content:space-around;
+  font-size: 40px;
+  border: 5px solid;
+  border-color:$timer-green;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+.whiteicon {
+  color: $font-white;
+}
+
+.circlediv {
+  border: 5px solid;
+  border-color:$timer-green;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
 }
 
 
