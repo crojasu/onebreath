@@ -16,11 +16,11 @@
   </div>
   <% @preset.activities.each do |act| %>
     <% @break.activity = act %>
-    <%= simple_form_for [@timersession, @break] do |f| %>
+      <%= simple_form_for [@timersession, @break] do |f| %>
       <%= f.association :activity, as: :hidden, value_method: :id %>
-      <%= f.button :submit, value: act.name %>
-    <% end %>
+      <div class="action-buttons-box">
+      <%= f.button :submit, value: act.name, :class=> "btn btn-primary" %>
+      <% end %>
+      </div>
   <% end %>
-  </div>
-  </div>
 </div>

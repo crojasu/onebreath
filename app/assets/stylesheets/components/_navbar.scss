@@ -5,8 +5,9 @@
   padding: 0px 0px;
   transition: all 0.3s ease;
   position: fixed;
-  bottom: 0;
+  bottom: 0px !important;
   width: 100%;
+  align-items: center;
 }
 
 .icons {
