@@ -1,5 +1,6 @@
 class TimerSessionsController < ApplicationController
   def index
+
   end
 
   def show
@@ -22,6 +23,11 @@ class TimerSessionsController < ApplicationController
 
   def destroy
   end
+
+  def stats
+    @stat = TimerSession.find(params[:id])
+  end
+
 
   private
 
