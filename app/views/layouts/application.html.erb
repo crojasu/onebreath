@@ -13,8 +13,8 @@
   </head>
   <body>
     <%= render 'shared/flashes' %>
-    <%= render 'shared/navbar' if @navbar_render %>
     <%= yield %>
+     <%= render 'shared/navbar' if @navbar_render %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>
