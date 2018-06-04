@@ -6,14 +6,17 @@ class TimerSessionsController < ApplicationController
   end
 
   def show
+    @navbar_render = true
     @timer_session = TimerSession.find(params[:id])
   end
 
   def new
+    @navbar_render = true
     @timer_session = TimerSession.new
   end
 
   def create
+    @navbar_render = true
     @timer_session = TimerSession.new
     @timer_session.preset = Preset.find(params[:preset_id])
     if @timer_session.save

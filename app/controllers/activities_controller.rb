@@ -9,14 +9,17 @@ class ActivitiesController < ApplicationController
   end
 
   def show
+    @navbar_render = true
   end
 
   def new
     @activities = @preset.activities
     @activity = Activity.new
+    @navbar_render = true
   end
 
   def create
+    @navbar_render = true
     @activities = @preset.activities
     @activity = Activity.new(activity_params)
     @activity.preset = @preset
@@ -29,6 +32,7 @@ class ActivitiesController < ApplicationController
   end
 
   def edit
+    @navbar_render = true
     @activity = Activity.new
     @activities = @preset.activities
   end
