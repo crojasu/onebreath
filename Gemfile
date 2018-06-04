@@ -19,7 +19,6 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'countdown'
 gem 'jekyll-spotify'
-gem 'simple_form_extension'
 gem 'chartkick'
 gem 'groupdate'
 
