@@ -11,6 +11,11 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
+    <style>
+      .body{
+        height: 100vh;
+      }
+    </style>
     <%= render 'shared/flashes' %>
     <%= yield %>
      <%= render 'shared/navbar' if @navbar_render %>
