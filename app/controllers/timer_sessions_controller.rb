@@ -31,6 +31,12 @@ class TimerSessionsController < ApplicationController
 
   def stats
     @timer_session = TimerSession.find(params[:id])
+    if @timer_session.breaks.first == nil
+      redirect_to timer_session_path(@timer_session)
+  end
+
+
+
     @stats = {
       "Workday" => @timer_session.preset.working_day,
       "Focused time" => @timer_session.preset.focus_timer.to_i * @timer_session.breaks.count.to_i
