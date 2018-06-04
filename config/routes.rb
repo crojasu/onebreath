@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
+  get 'pages/ui'
   resources :presets do
     resources :activities
     resources :timer_sessions, only: [:create]
