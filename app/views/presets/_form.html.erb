@@ -2,9 +2,9 @@
 	<div class="middle-content">
   	<%= simple_form_for [@preset], defaults: { input_html: { class: 'form-control' } } do |f| %>
     <%= f.input :name, label:"Name your Flow"%>
-		<%= f.input :working_day, label: "How long do you want to work today?", :field, as: :slider, min: 0, max: 10 %>
-		<%= f.input :focus_timer, label: "How long do you want to focus?" %>
-		<%= f.input :break_duration, label: "How long should your short breaks be?"%>
+		<%= f.input :working_day, label: "How many hours would you like to work today?" %>
+		<%= f.input :focus_timer, label: "How many minutes per work session?" %>
+		<%= f.input :break_duration, label: "How many minutes per break session?" %>
   </div>
 
     <div class="col-xs-12 col-md-6 col-md-offset-3">
@@ -14,38 +14,3 @@
     </div>
     <% end %>
   </div>
-
-<!-- <div class="col-xs-8 col-xs-offset-2 col-md-4 col-md-offset-4">
-  <div class="middle-content">
-    <%= form_for(@preset) do |f| %>
-      <%= f.label :name, label:"Name your Flow" %>
-      <%= f.text_field :name %>
-    <div class="slidecontainer">
-      <%= f.label :working_day, label:"How long do you want to work today?" %>
-      <input type="range" min="1" max="24" value="1" class="slider" id="myRange" :working_day>
-      <p>Total: <span id="demo"></span></p>
-      <%= f.label :focus_timer, label:"How long do you want to focus?" %>
-      <input type="range" min="1" max="24" value="1" class="slider" id="myRange" :focus_timer>
-      <p>Total: <span id="demo"></span></p>
-      <%= f.label :break_duration, label:"How long should your short breaks be?" %>
-      <input type="range" min="1" max="24" value="1" class="slider" id="myRange" :break_duration>
-      <p>Total: <span id="demo"></span></p>
-    </div>
-      <div class="action-buttons-box">
-        <%= f.submit "Start Timer", :class=> "btn btn-primary sign-in" %>
-      </div>
-      <div class="action-buttons-box">
-        <%= f.submit "Define Breaks", :class=> "btn btn-primary sign-in-fb" %>
-      </div>
-  </div>
-  <% end %>
-</div>
-<script>
-let slider = document.getElementById("myRange");
-let output = document.getElementById("demo");
-output.innerHTML = slider.value;
-
-slider.oninput = function() {
-  output.innerHTML = this.value;
-}
-</script> -->
