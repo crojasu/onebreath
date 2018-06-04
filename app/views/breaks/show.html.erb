@@ -21,11 +21,19 @@
     <br>
     <div class="col-xs-12 col-md-6 col-md-offset-3">
       <div class="action-buttons-box">
-          <%= link_to "Resume", break_path(@break), method: :patch, remote: true , :class=> "btn btn-primary rexit" %>
+          <%= link_to break_path(@break), method: :patch, remote: true do %>
+           <i class="far fa-play-circle fa-3x whiteicon"></i>
+            <% end  %>
+             <%= link_to presets_path do %>
+           <i class="far fa-stop-circle fa-3x whiteicon"></i>
+          <% end  %>
       </div>
-      <div class="action-buttons-box">
-          <%= link_to "Exit", presets_path,  :class=> "btn btn-primary rexit" %>
+
+          <div class="action-buttons-box">
+        <%= link_to "Exit", presets_path, :class=> "btn btn-primary rexit" %>
+         </div>
       </div>
+
     </div>
     <div class="row">
     <div class="col-xs-8 col-xs-offset-2 col-md-4 col-md-offset-4">
@@ -38,3 +46,5 @@
 
 
 <%= javascript_pack_tag 'easytimer' %>
+
+

@@ -74,7 +74,16 @@ margin-bottom: 80px;
   margin-bottom: 20px;
 }
 
-// Buttons Custom
+.white-container {
+  background-color: white;
+}
+
+// Buttons Custom Blue BG
+.blue-bg {
+  background-color: $bg-blue;
+}
+
+
 .resume {
   width: 175px;
   height:45px;
@@ -85,9 +94,14 @@ margin-bottom: 80px;
   width: 175px;
   height:45px;
   font-size: 24px;
-  background-color:$font-white;
+  background-color:transparent;
   border-color: $button-green;
   color: $button-green;
+  &:hover {
+    background-color:$button-green;
+    border-color: $button-green;
+    color: $font-white;
+    }
 }
 
 .sign-in {
@@ -95,7 +109,13 @@ margin-bottom: 80px;
   height:45px;
   font-size: 16px;
   background-color:$button-green;
-  font-color: $font-white;
+  border-color: $button-green;
+  color: $font-white;
+   &:hover {
+    background-color:$font-white;
+    border-color: $button-green;
+    color: $button-green;
+    }
 }
 
 .sign-in-fb {
@@ -103,7 +123,7 @@ margin-bottom: 80px;
   height:45px;
   font-size: 16px;
   color: #16BA89;
-  background-color:$font-white;
+  background-color:transparent;
   border-color: $button-green;
 }
 
@@ -123,6 +143,17 @@ margin-bottom: 80px;
   border-color: $selectblue;
   color: $selectblue;
   font-size: 16px;
+}
+
+.breakies {
+  padding:0;
+  background-color:transparent;
+}
+
+.no-list {
+ list-style-type: none;
+ list-style: none;
+
 }
 
 // Timer
