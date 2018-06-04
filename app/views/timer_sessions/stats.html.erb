@@ -1,0 +1,28 @@
+
+
+<%= "Time spent on breaks = " %>
+<%if @timer_session.breaks.first != nil %>
+  <%= @timer_session.breaks.count.to_i * @timer_session.breaks.first.length.to_i%>
+<% else %>
+  <%= "0" %>
+<% end %>
+<%= "seconds" %>
+<br>
+
+<%= "Time spent focusing = " %>
+<% if @timer_session.breaks.count != 0 %>
+  <%= @timer_session.preset.focus_timer.to_i * @timer_session.breaks.count.to_i%>
+<% else %>
+  <%= "0" %>
+<% end %>
+
+<%= "seconds" %>
+
+<br>
+<h4>Activities completed during breaks</h4>
+
+<%= javascript_include_tag "https://www.gstatic.com/charts/loader.js", "chartkick" %>
+<%= column_chart(@stats, ytitle: "Time (minutes)", xtitle: "Activity")  %>
+
+
+

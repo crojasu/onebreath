@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
+  get 'pages/ui'
   resources :presets do
     resources :activities
     resources :timer_sessions, only: [:create]
@@ -9,14 +10,13 @@ Rails.application.routes.draw do
   resources :timer_sessions, only: [:index, :show, :destroy] do
     resources :breaks, only: [:new, :create, :show]
   end
+  get 'timer_sessions/:id/stats', to: 'timer_sessions#stats', as: 'stats'
   resources :start_timer_sessions, only: [:update]
   resources :end_timer_sessions, only: [:update]
 
   resources :break_timer, only: [:update]
 
-
-  resources :activities, only: :destroy
-
+  resources :activities, only: [:destroy]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

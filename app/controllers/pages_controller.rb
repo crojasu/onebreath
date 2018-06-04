@@ -6,4 +6,7 @@ class PagesController < ApplicationController
       redirect_to presets_path
     end
   end
+
+  def ui
+  end
 end
