@@ -64,6 +64,7 @@ GEM
       sass (>= 3.3.4)
     builder (3.2.3)
     byebug (10.0.2)
+    chartkick (2.3.4)
     coderay (1.1.2)
     colorator (1.1.0)
     concurrent-ruby (1.0.5)
@@ -90,6 +91,8 @@ GEM
     forwardable-extended (2.6.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    groupdate (4.0.1)
+      activesupport (>= 4.2)
     hashie (3.5.7)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
@@ -286,10 +289,12 @@ DEPENDENCIES
   autoprefixer-rails
   bootsnap
   bootstrap-sass (~> 3.3)
+  chartkick
   countdown
   devise
   figaro
   font-awesome-sass (~> 5.0.9)
+  groupdate
   jbuilder (~> 2.0)
   jekyll-spotify
   listen (~> 3.0.5)
