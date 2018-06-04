@@ -1,3 +1,5 @@
+
+
 class TimerSessionsController < ApplicationController
   def index
 
@@ -25,7 +27,18 @@ class TimerSessionsController < ApplicationController
   end
 
   def stats
-    @stat = TimerSession.find(params[:id])
+    @timer_session = TimerSession.find(params[:id])
+    @stats = {
+      "Workday" => @timer_session.preset.working_day,
+      "Focused time" => @timer_session.preset.focus_timer.to_i * @timer_session.breaks.count.to_i
+    }
+    @timer_session.breaks.each do |b|
+      if @stats[b.activity.name].present?
+        @stats[b.activity.name] += @timer_session.preset.break_duration
+      else
+        @stats[b.activity.name] = @timer_session.preset.break_duration
+      end
+    end
   end
 
 
