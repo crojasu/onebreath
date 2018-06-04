@@ -20,9 +20,10 @@
            <%= link_to preset.name, preset_timer_sessions_path(preset), method: :post, :class=> "btn btn-primary flow-selected"%>
            <br>
            <%= link_to 'delete', preset , method: :delete,
-           data: { confirm: "Are you sure?" } %>
+           data: { confirm: "Are you sure?" }, id: ' @preset.id ' %>
            || <%= link_to 'edit', edit_preset_path(preset)%>
           <% end %>
+
       </div>
 
       <div class="presets-box">
