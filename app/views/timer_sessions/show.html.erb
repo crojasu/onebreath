@@ -39,6 +39,9 @@
         <div class="action-buttons-box">
         <%= link_to "Exit", presets_path, :class=> "btn btn-primary rexit" %>
          </div>
+        <div class="action-buttons-box">
+        <%= link_to "Exit to stats", stats_path(@timer_session), :class=> "btn btn-primary rexit" %>
+         </div>
          <%if @timer_session.starts_at != nil %>
           <%= (Time.now - @timer_session.starts_at).round(2) %><%= "seconds" %>
           <% end %>
