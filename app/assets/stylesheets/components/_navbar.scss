@@ -3,11 +3,13 @@
   background: #16BA89;
   height: 70px;
   padding: 0px 0px;
+  margin-bottom: 0px;
   transition: all 0.3s ease;
-  position: fixed;
-  bottom: 0px !important;
+  bottom: 0px;
   width: 100%;
-  align-items: center;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
 }
 
 .icons {
@@ -21,4 +23,8 @@
 i {
   font-size: 24px;
   color: #0B2E46;
+}
+
+.cover-small{
+  background:none !important;;
 }
