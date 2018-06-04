@@ -1,7 +1,10 @@
+<head>
+
+</head>
 <div class="container text-center">
 
-
-    <div class="row">
+  <div class="wrapper">
+        <div class="row">
       <div class="col-xs-12 col-md-6 col-md-offset-3">
         <div class="title-box">
         <h1>One Breath</h1>
@@ -20,8 +23,10 @@
 
   <div class="col-xs-8 col-xs-offset-2 col-md-4 col-md-offset-4">
     <div class="middle-content">
-      <h2>Change your life</h2>
+      <h1>H1 Tag</h1>
+      <h2>H2 Tag</h2>
       <p class="text-justify">
+      Body Text
       Meditation is a age old technique from the sages of the Himalayas. These days people are stressed, I’m sure you are too, and you are looking for a way out. Using one breath is going to solve all your problems, even help you stop smoking crack on the weekends.
     </p>
     </div>
@@ -29,16 +34,38 @@
 
     <div class="col-xs-12 col-md-6 col-md-offset-3">
       <div class="action-buttons-box">
+        resume Class Button <br>
         <%= link_to "I'm new", new_user_registration_path, :class=> "btn btn-primary resume" %>
-      </div>
-    </div>
-
-    <div class="col-xs-12 col-md-6 col-md-offset-3 ">
-      <div class="action-buttons-box">
+         <div class="action-buttons-box">
+        rexit Class Button <br>
         <%= link_to "Sign In", user_session_path, :class=> "btn btn-primary rexit" %>
-      </div>
-    </div>
+        </div>
+         <div class="action-buttons-box">
+        sign-in Class Button <br>
+        <%= link_to "Sign In", user_session_path, :class=> "btn btn-primary sign-in" %>
+        </div>
+         <div class="action-buttons-box">
+        sign-in-fb Class Button <br>
+        <%= link_to "Sign In Fb", user_session_path, :class=> "btn btn-primary sign-in-fb" %>
+        </div>
+         <div class="action-buttons-box">
+        flow-selected Class Button <br>
+        <%= link_to "selected", user_session_path, :class=> "btn btn-primary flow-selected" %>
+        </div>
+         <div class="action-buttons-box">
+        flow-unselected Class Button <br>
+        <%= link_to "unselected", user_session_path, :class=> "btn btn-primary flow-unselected" %>
+        <br>
+        <%= link_to "link a class", presets_path %>
+        </div>
+     </div>
+
   </div>
+
+
+  </div>
+
+
 </div>
 
 
