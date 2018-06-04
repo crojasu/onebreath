@@ -7,6 +7,9 @@
   transition: all 0.3s ease;
   bottom: 0px;
   width: 100%;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
 }
 
 .icons {
@@ -20,4 +23,8 @@
 i {
   font-size: 24px;
   color: #0B2E46;
+}
+
+.cover-small{
+  background:none !important;;
 }
