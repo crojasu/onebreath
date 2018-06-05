@@ -2,7 +2,7 @@
 
 <%= simple_form_for [@preset, @activity] , defaults: { input_html: { class: 'form-control' } } do |f| %>
   <%= f.input :name %>
-  <%= f.submit "Add Activity", class: "btn btn-primary sign-in-fb" %>
+  <%= f.submit "Add Activity", class: "obbtn sign-in-fb" %>
 <% end %>
 
 </div>
@@ -19,7 +19,7 @@
 </ul>
 
 <div class="action-buttons-box">
-  <%= link_to "Save to flow", presets_path, class: "btn btn-primary resume" %>
+  <%= link_to "Save Breaks", presets_path, class: "btn obbtn sign-in" %>
 </div>
 
 </div>

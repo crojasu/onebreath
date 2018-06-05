@@ -78,15 +78,6 @@ margin-bottom: 20px;
 
 // Buttons
 
-.btn-primary:hover  {
-  background-color:pink;
-}
-
-.btn-primary:active {
-  background-color: purple;
-}
-
-
 .obbtn {
 border: 1 solid;
 letter-spacing: 1px;
@@ -151,7 +142,7 @@ color: $font-white;
 
 .flow-selected {
   width: 150px;
-  height:35px;
+  height: 35px;
   font-size: 16px;
   background-color:$selectblue;
   border-color: $selectblue;
