@@ -13,9 +13,9 @@
     </div>
   <div class="col-xs-8 col-xs-offset-2 col-md-4 col-md-offset-4">
     <div class="timerfont">
-      <!--       <%= @break.duration %> -->
-      <div id="timer" data-sessionid="<%= @break.timer_session.id %>" data-break="<%= @break.id %>" data-breaklimit="<%= @break.length %>">00:00:00
+      <div id="timer2" data-sessionid="<%= @break.timer_session.id %>" data-break="<%= @break.id %>" data-breaklimit="<%= @break.length %>" data-day="<%= @break.timer_session.preset.break_duration %>"><%= @break.timer_session.preset.duration(:break_duration)%>
       </div>
+      <br>
     </div>
     <br>
     <br>
@@ -38,3 +38,14 @@
   </div>
 </div>
 <%= javascript_pack_tag 'easytimer' %>
+
+
+
+
+
+
+
+
+
+
+
