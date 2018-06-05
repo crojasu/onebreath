@@ -15,7 +15,7 @@
     <div class="middle-content">
      <% @presets.each do |preset| %>
      <div class="presets-box">
-       <%= link_to preset.name, preset_timer_sessions_path(preset), method: :post, :class=> "btn btn-primary flow-selected"%>
+       <%= link_to preset.name, preset_timer_sessions_path(preset), method: :post, :class=> "btn obbtn flow-selected"%>
        <br>
        <%= link_to 'delete', preset , method: :delete,
        data: { confirm: "Are you sure?" }, id: ' @preset.id ' %>
@@ -23,7 +23,7 @@
        <% end %>
      </div>
      <div class="presets-box">
-      <%= link_to "Add new", new_preset_path, :class=> "btn btn-primary flow-unselected" %>
+      <%= link_to "Add new", new_preset_path, :class=> "btn obbtn flow-unselected" %>
     </div>
   </div>
 </div>

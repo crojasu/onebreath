@@ -2,7 +2,7 @@
 
 class TimerSessionsController < ApplicationController
   def index
-
+    @timer_sessions = TimerSession.all
   end
 
   def show

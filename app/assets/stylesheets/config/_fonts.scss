@@ -7,12 +7,9 @@ $body-font: "Raleway";
 $headers-font: "Raleway";
 $base-font: "Raleway";
 //To use a font file (.woff) uncomment following lines
-@font-face {
-  font-family: "Raleway";
-  src: font-url('../fonts/Raleway.ttf');
-}
 
-$my-font: "Font Name";
+
+$my-font: "Raleway";
 
 
 // To use a font file (.woff) uncomment following lines
