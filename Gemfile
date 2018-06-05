@@ -19,8 +19,10 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'countdown'
 gem 'jekyll-spotify'
+gem 'simple_form_extension'
 gem 'chartkick'
 gem 'groupdate'
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'
@@ -33,3 +35,5 @@ group :development, :test do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
+
+gem 'redactor-rails', github: 'glyph-fr/redactor-rails'
