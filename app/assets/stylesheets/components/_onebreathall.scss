@@ -1,3 +1,16 @@
+// Table of Contents
+//  Buttons defaults
+// Links
+// Headers and p
+// Custom Classes
+// Buttons Custom Blue BG
+// Timer
+// Home Classes
+// Content-Slider
+// Media Queries
+
+html,body { height: 100%;}
+
 
 // Buttons defaults
 .btn {
@@ -32,7 +45,7 @@
 
 
 
-// headers
+// headers and p
 
 h1 {
   font-size: 32px;
@@ -51,6 +64,17 @@ p {
 }
 
 
+.h2bold {
+  font-weight:normal;
+  font-size: 22px;
+}
+
+.plight {
+  font-weight:lighter;
+}
+
+
+
 // Custom Classes
 .title-box {
 margin-top: 20px;
@@ -58,7 +82,7 @@ margin-bottom: 20px;
 }
 
 .sub-title-box {
-margin-bottom: 50px;
+margin-bottom: 20px;
 }
 
 .middle-content {
@@ -106,11 +130,13 @@ margin-bottom: 50px;
 
 .sign-in {
   width: 175px;
-  height:45px;
+  height:40px;
   font-size: 16px;
   background-color:$button-green;
   border-color: $button-green;
   color: $font-white;
+  text-align: center;
+  vertical-align: middle;
    &:hover {
     background-color:$font-white;
     border-color: $button-green;
@@ -120,11 +146,14 @@ margin-bottom: 50px;
 
 .sign-in-fb {
   width: 175px;
-  height:45px;
+  height:40px;
   font-size: 16px;
   color: #16BA89;
   background-color:transparent;
   border-color: $button-green;
+  text-align: center;
+  vertical-align: middle;
+
 }
 
 .flow-selected {
@@ -139,11 +168,13 @@ margin-bottom: 50px;
 .flow-unselected {
   width: 150px;
   height:35px;
-  background-color:$font-white;
+  background-color:transparent;
   border-color: $selectblue;
   color: $selectblue;
   font-size: 16px;
 }
+
+
 
 .breakies {
   padding:0;
@@ -192,6 +223,30 @@ margin-bottom: 50px;
 
 // Home
 .homey {
-background-image: image-url("riverforest.jpg")
+background: image("riverforest.jpg");
+background-size: 100%;
 }
+
+// Content-Slider
+.obcarousel {
+  background-opacity:0.5;
+  margin-bottom:30px;
+
+}
+
+.carousel-control.right, .carousel-control.left {
+  background-image:none;
+
+}
+
+.carousel-caption {
+    top: 0;
+    bottom: auto;
+}
+.img-carousel {
+      opacity: 0.5;
+
+}
+
+
 

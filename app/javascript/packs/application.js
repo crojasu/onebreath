@@ -1,4 +1,3 @@
 import "bootstrap";
-//= require Chart.bundle
-//= require chartkick
+import "./swipe";
 
