@@ -6,14 +6,17 @@ class TimerSessionsController < ApplicationController
   end
 
   def show
+    @navbar_render = true
     @timer_session = TimerSession.find(params[:id])
   end
 
   def new
+    @navbar_render = true
     @timer_session = TimerSession.new
   end
 
   def create
+    @navbar_render = true
     @timer_session = TimerSession.new
     @timer_session.preset = Preset.find(params[:preset_id])
     if @timer_session.save
@@ -28,6 +31,12 @@ class TimerSessionsController < ApplicationController
 
   def stats
     @timer_session = TimerSession.find(params[:id])
+    if @timer_session.breaks.first == nil
+      redirect_to timer_session_path(@timer_session)
+  end
+
+
+
     @stats = {
       "Workday" => @timer_session.preset.working_day,
       "Focused time" => @timer_session.preset.focus_timer.to_i * @timer_session.breaks.count.to_i
