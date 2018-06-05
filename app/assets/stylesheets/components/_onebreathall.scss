@@ -1,9 +1,8 @@
 // Table of Contents
-//  Buttons defaults
 // Links
 // Headers and p
 // Custom Classes
-// Buttons Custom Blue BG
+// Buttons Custom
 // Timer
 // Home Classes
 // Content-Slider
@@ -11,32 +10,6 @@
 
 html,body { height: 100%;}
 
-
-// Buttons defaults
-.btn {
-    border: 1 solid;
-    letter-spacing: 1px;
-    // text-transform: uppercase;
-    border-radius: 10px;
-}
-
-.btn:focus, .btn:active:focus, .btn.active:focus {
-    outline: 0 none;
-}
-
-.btn-primary {
-    background: $button-green;
-    color: #ffffff;
-}
-
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
-    background: #33a6cc;
-}
-
-.btn-primary:active, .btn-primary.active {
-    background: #007299;
-    box-shadow: none;
-}
 
 // Links
 .a {
@@ -102,9 +75,35 @@ margin-bottom: 20px;
   background-color: white;
 }
 
-// Buttons Custom Blue BG
-.blue-bg {
-  background-color: $bg-blue;
+
+// Buttons
+
+.btn-primary:hover  {
+  background-color:pink;
+}
+
+.btn-primary:active {
+  background-color: purple;
+}
+
+
+.obbtn {
+border: 1 solid;
+letter-spacing: 1px;
+border-radius: 10px;
+border: 1 solid;
+letter-spacing: 1px;
+// text-transform: uppercase;
+border-radius: 10px;
+background: $button-green;
+color: $font-white;
+}
+
+.obbtn:hover {
+opacity:1.2;
+background: $bg-blue;
+color: $font-white;
+
 }
 
 
@@ -112,6 +111,10 @@ margin-bottom: 20px;
   width: 175px;
   height:45px;
   font-size: 24px;
+  background-color:button-green;
+  border-color: $button-green;
+  color: $font-white;
+
 }
 
 .rexit {
@@ -121,11 +124,7 @@ margin-bottom: 20px;
   background-color:transparent;
   border-color: $button-green;
   color: $button-green;
-  &:hover {
-    background-color:$button-green;
-    border-color: $button-green;
-    color: $font-white;
-    }
+
 }
 
 .sign-in {
@@ -135,13 +134,7 @@ margin-bottom: 20px;
   background-color:$button-green;
   border-color: $button-green;
   color: $font-white;
-  text-align: center;
-  vertical-align: middle;
-   &:hover {
-    background-color:$font-white;
-    border-color: $button-green;
-    color: $button-green;
-    }
+
 }
 
 .sign-in-fb {
@@ -159,9 +152,9 @@ margin-bottom: 20px;
 .flow-selected {
   width: 150px;
   height:35px;
-  opacity:0.8;
   font-size: 16px;
   background-color:$selectblue;
+  border-color: $selectblue;
 
 }
 
