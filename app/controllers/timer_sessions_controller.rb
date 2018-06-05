@@ -33,9 +33,7 @@ class TimerSessionsController < ApplicationController
     @timer_session = TimerSession.find(params[:id])
     if @timer_session.breaks.first == nil
       redirect_to timer_session_path(@timer_session)
-  end
-
-
+    end
 
     @stats = {
       "Workday" => @timer_session.preset.working_day,
