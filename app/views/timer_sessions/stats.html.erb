@@ -23,14 +23,18 @@
 <br>
 
 <%= "Time remaning = " %>
-<%= remaining_time %>
+<% if remaining_time >= 0 %>
+  <%= remaining_time %>
+<% else %>
+  <%= "0" %>
+<% end %>
 <%= "seconds" %>
 <br>
 
 <h4>Activities completed during breaks</h4>
 
 <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js", "chartkick" %>
-<div class="stats">
+<div class="stats2">
    <%= bar_chart({"work day" => working_time, "remaining time" => remaining_time}, ytitle: "Time (minutes)", xtitle: "Activity")  %>
 </div>
 <br>
@@ -38,5 +42,7 @@
   <%= column_chart(@stats, ytitle: "Time (minutes)", xtitle: "Activity")  %>
 </div>
 
-
+<div class="action-buttons-box">
+  <%= link_to "Exit", timer_session_path(@timer_session), :class=> "btn btn-primary rexit" %>
+</div>
 
