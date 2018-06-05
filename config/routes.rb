@@ -13,10 +13,9 @@ Rails.application.routes.draw do
   get 'timer_sessions/:id/stats', to: 'timer_sessions#stats', as: 'stats'
   resources :start_timer_sessions, only: [:update]
   resources :end_timer_sessions, only: [:update]
-
   resources :break_timer, only: [:update]
-
   resources :activities, only: [:destroy]
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

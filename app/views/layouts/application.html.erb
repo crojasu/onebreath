@@ -7,7 +7,7 @@
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
-    <link href="css/styles.css" />
+    <!-- <link href="css/styles.css" /> -->
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
@@ -16,7 +16,7 @@
         height: 100vh;
       }
     </style>
-    <%= render 'shared/flashes' %>
+
     <%= yield %>
      <%= render 'shared/navbar' if @navbar_render %>
     <%= javascript_include_tag 'application' %>
