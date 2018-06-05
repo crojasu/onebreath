@@ -1,1 +1,27 @@
-<h1>Hahahaha</h1>
+<h1>Lifetime Stats</h1>
+
+<% total_focus = 0%>
+<% total_break = 0 %>
+<% @timer_sessions.each do |timer_session| %>
+
+  <% total_focus += timer_session.preset.focus_timer * timer_session.breaks.length%>
+  <% total_break += timer_session.preset.break_duration * timer_session.breaks.length%>
+<% end %>
+<%= "Total time spent = " %>
+<%= total_focus + total_break %>
+<br>
+<%= "Total time spent focusing = " %>
+<%= total_focus %>
+<br>
+<%= "Total time spent on breaks = " %>
+<%= total_break %>
+<br>
+
+
+<% if @timer_sessions.last != nil %>
+  <%= link_to "Stats for last timer session", stats_path(@timer_sessions.last) %>
+<% end %>
+
+<div class="action-buttons-box">
+  <%= link_to "Exit", presets_path, :class=> "btn btn-primary rexit" %>
+</div>
