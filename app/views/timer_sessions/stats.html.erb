@@ -11,30 +11,29 @@
 <%= working_time %>
 <%= "seconds" %>
 <br>
+
 <%= "Time spent on breaks = " %>
-<%if @timer_session.breaks.first != nil %>
-  <%= breaks_time%>
-<% else %>
-  <%= "0" %>
-<% end %>
+<%= breaks_time%>
 <%= "seconds" %>
 <br>
+
 <%= "Time spent focusing = " %>
-<% if @timer_session.breaks.count != 0 %>
-  <%= focus_time%>
-<% else %>
-  <%= "0" %>
-<% end %>
+<%= focus_time%>
 <%= "seconds" %>
 <br>
+
 <%= "Time remaning = " %>
 <%= remaining_time %>
 <%= "seconds" %>
 <br>
+
 <h4>Activities completed during breaks</h4>
 
 <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js", "chartkick" %>
-
+<div class="stats">
+   <%= bar_chart({"work day" => working_time, "remaining time" => remaining_time}, ytitle: "Time (minutes)", xtitle: "Activity")  %>
+</div>
+<br>
 <div class="stats">
   <%= column_chart(@stats, ytitle: "Time (minutes)", xtitle: "Activity")  %>
 </div>
