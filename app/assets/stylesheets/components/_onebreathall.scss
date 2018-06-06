@@ -8,20 +8,23 @@
 // Content-Slider
 // Statistics
 
+
 html,body {
   height: 100%;
-  margin-bottom: 150px;
+  margin-bottom: 100px;
 }
 
 
+
 // Links
-.a {
+a {
   font-color:$font-white;
 }
 
 
 
 // headers and p
+
 
 h1 {
   font-size: 32px;
@@ -31,8 +34,8 @@ h1 {
 h2 {
   font-size: 24px;
   font-weight: lighter;
-  margin-bottom:10px;
 }
+
 
 p {
   font-size: 16px;
@@ -49,6 +52,15 @@ p {
   font-weight:lighter;
 }
 
+.pshadow {
+  text-shadow:0 0 #fff;
+
+}
+
+.htransparent{
+  background:rgba(1,1,1,0.5);
+}
+
 
 
 // Custom Classes
@@ -63,6 +75,7 @@ margin-bottom: 20px;
 
 .middle-content {
   margin-bottom: 40px;
+  opacity: 0.9;
 }
 .presets-box {
   margin-bottom: 10px;
@@ -94,9 +107,13 @@ color: $font-white;
 }
 
 .obbtn:hover {
-opacity:1.2;
-background: $bg-blue;
+opacity:0.8;
+background: transparent;
 color: $font-white;
+
+}
+
+.home-button {
 
 }
 
@@ -212,6 +229,10 @@ color: $font-white;
 }
 
 
+.obopacity {
+  opacity: 0.6;
+
+}
 .stats-container {
   position: relative;
   display: flex;
@@ -226,13 +247,38 @@ color: $font-white;
 
 .time-stats {
   margin-top: 20px;
+
 }
 
 // Home
 .homey {
+
+  position: relative;
+  background: asset-data-url("riverforest.jpg") no-repeat center center fixed, linear-gradient(#eb01a5, #d13531);
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(-225deg,#fff,#000);
+    opacity: 0.6;
+  }
+}
+
+
+.home-fonts {
+  color: black;
+
 background: image("riverforest.jpg");
 background-size: 100%;
 margin-bottom:20px;
+
 }
 
 // Content-Slider
@@ -304,4 +350,10 @@ margin-bottom:20px;
 }
 #focus_timer .form-control-label {
   font-weight: lighter;
+}
+.lifetime-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
