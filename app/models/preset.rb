@@ -1,8 +1,8 @@
 class Preset < ApplicationRecord
   belongs_to :user
-  has_many :activities,  dependent: :destroy
   has_many :timer_sessions, dependent: :destroy
-  has_many :breaks, through: :timer_sessions , dependent: :destroy
+  has_many :activities,  dependent: :destroy
+  has_many :breaks, through: :timer_sessions
   #validates :activity, presence: true
   validates :working_day, presence: true
   validates :focus_timer, presence: true
