@@ -1,48 +1,49 @@
 
-
-
-
 <% working_time = @timer_session.preset.working_day %>
 <% breaks_time = @timer_session.breaks.count.to_i * @timer_session.breaks.first.length.to_i%>
 <% focus_time = @timer_session.preset.focus_timer.to_i * @timer_session.breaks.count.to_i %>
-<%remaining_time = working_time - focus_time - breaks_time %>
+<%remaining_time = working_time * 60 - focus_time - breaks_time %>
 
-<%= "Time allocated for today = " %>
-<%= working_time %>
-<%= "seconds" %>
-<br>
+<div class="stats-container">
+  <div class="time-stats">
+    <div class="time">
+      <%= "Time allocated for today = " %>
+      <%= working_time * 60 %>
+      <%= "seconds" %>
+      <br>
+      <%= "Time remaning = " %>
+      <% if remaining_time >= 0 %>
+        <%= remaining_time %>
+      <% else %>
+        <%= "0" %>
+      <% end %>
+      <%= "seconds" %>
+    </div>
+    <br>
 
-<%= "Time spent on breaks = " %>
-<%= breaks_time%>
-<%= "seconds" %>
-<br>
+  </div>
 
-<%= "Time spent focusing = " %>
-<%= focus_time%>
-<%= "seconds" %>
-<br>
+  <div class="stats-title">
+    <h4>Activities completed during breaks</h4>
+  </div>
 
-<%= "Time remaning = " %>
-<% if remaining_time >= 0 %>
-  <%= remaining_time %>
-<% else %>
-  <%= "0" %>
-<% end %>
-<%= "seconds" %>
-<br>
+  <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js", "chartkick" %>
 
-<h4>Activities completed during breaks</h4>
+  <br>
+  <div class="stats-graph">
+    <%= column_chart(@stats, ytitle: "Time (minutes)", xtitle: "Activity", colors: ["#000", "#b00"])  %>
+    <div class="time-spent">
+      <% @stats.each do |key, value| %>
+        <%= "Time spent on #{key} = #{value}" %>
+        <br>
+      <% end %>
+    </div>
+  </div>
 
-<%= javascript_include_tag "https://www.gstatic.com/charts/loader.js", "chartkick" %>
-<div class="stats2">
-   <%= bar_chart({"work day" => working_time, "remaining time" => remaining_time}, ytitle: "Time (minutes)", xtitle: "Activity")  %>
+  <div class="action-buttons-box">
+    <%= link_to "Continue", timer_session_path(@timer_session), :class=> "btn btn-primary rexit" %>
+  </div>
+  <div class="action-buttons-box">
+    <%= link_to "Exit to home", presets_path, :class=> "btn btn-primary rexit" %>
+  </div>
 </div>
-<br>
-<div class="stats">
-  <%= column_chart(@stats, ytitle: "Time (minutes)", xtitle: "Activity")  %>
-</div>
-
-<div class="action-buttons-box">
-  <%= link_to "Exit", timer_session_path(@timer_session), :class=> "btn btn-primary rexit" %>
-</div>
-
