@@ -5,7 +5,7 @@ class PresetsController < ApplicationController
   def index
     @presets = Preset.all
     @navbar_render = true
-    raise
+
   end
 
   def show
