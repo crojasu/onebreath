@@ -3,6 +3,9 @@
 <% breaks_time = @timer_session.breaks.count.to_i * @timer_session.breaks.first.length.to_i%>
 <% focus_time = @timer_session.preset.focus_timer.to_i * @timer_session.breaks.count.to_i %>
 <%remaining_time = working_time * 60 - focus_time - breaks_time %>
+<div class="stats-title">
+    <h4>Time Management</h4>
+  </div>
 
 <div class="stats-container">
   <div class="time-stats">
@@ -23,9 +26,7 @@
 
   </div>
 
-  <div class="stats-title">
-    <h4>Time Management</h4>
-  </div>
+
 
   <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js", "chartkick" %>
 
@@ -41,9 +42,9 @@
   </div>
 
   <div class="action-buttons-box">
-    <%= link_to "Continue", timer_session_path(@timer_session), :class=> "btn btn-primary rexit" %>
+    <%= link_to "Continue", timer_session_path(@timer_session), :class=> "btn obbtn rexit" %>
   </div>
   <div class="action-buttons-box">
-    <%= link_to "Exit to home", presets_path, :class=> "btn btn-primary rexit" %>
+    <%= link_to "Exit to home", presets_path, :class=> "btn obbtn rexit" %>
   </div>
 </div>
