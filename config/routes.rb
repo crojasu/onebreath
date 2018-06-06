@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  get 'pages/ui'
+  get 'pages/ui', to: 'pages#ui'
+  get 'pages/dash', to: 'pages#dash', as: 'dash'
   resources :presets do
     resources :activities
     resources :timer_sessions, only: [:create]
