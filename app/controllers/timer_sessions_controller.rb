@@ -36,8 +36,8 @@ class TimerSessionsController < ApplicationController
     end
 
     @stats = {
-      "Workday" => @timer_session.preset.working_day,
-      "Focused time" => @timer_session.preset.focus_timer.to_i * @timer_session.breaks.count.to_i
+      # "Workday" => @timer_session.preset.working_day * 60,
+      "Focusing" => @timer_session.preset.focus_timer.to_i * @timer_session.breaks.count.to_i
     }
     @timer_session.breaks.each do |b|
       if @stats[b.activity.name].present?
