@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'pages/ui', to: 'pages#ui'
   get 'pages/dash', to: 'pages#dash', as: 'dash'
+  get 'pages/info', to: 'pages#info', as: 'info'
   resources :presets do
     resources :activities
     resources :timer_sessions, only: [:create]
