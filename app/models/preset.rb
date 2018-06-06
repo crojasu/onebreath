@@ -7,6 +7,7 @@ class Preset < ApplicationRecord
   validates :working_day, presence: true
   validates :focus_timer, presence: true
   validates :break_duration, presence: true
+  validates :name, presence: true
 
   after_create :populate_default_activities
 
