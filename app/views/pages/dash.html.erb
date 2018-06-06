@@ -7,7 +7,11 @@
     <div class="row">
       <div class="col-xs-12 col-md-6 col-md-offset-3">
         <div class="title-box">
-          <h1 class="pshadow">Hi <%= @user.email.split("@")[0] %></h1>
+          <h1 class="pshadow">Hi <%= @user.first_name %>
+            <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
+            <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          </h1>
+
           <h2 class="pshadow">Your Dashboard  </h2>
 
         </div>
