@@ -1,6 +1,6 @@
 class Break < ApplicationRecord
-  belongs_to :timer_session, dependent: :destroy
-  belongs_to :activity, dependent: :destroy
+  belongs_to :timer_session
+  belongs_to :activity
   validates :activity, presence: true
 
   # def duration

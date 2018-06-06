@@ -1,29 +1,15 @@
+// Table of Contents
+// Links
+// Headers and p
+// Custom Classes
+// Buttons Custom
+// Timer
+// Home Classes
+// Content-Slider
+// Statistics
 
-// Buttons defaults
-.btn {
-    border: 1 solid;
-    letter-spacing: 1px;
-    // text-transform: uppercase;
-    border-radius: 10px;
-}
+html,body { height: 100%;}
 
-.btn:focus, .btn:active:focus, .btn.active:focus {
-    outline: 0 none;
-}
-
-.btn-primary {
-    background: $button-green;
-    color: #ffffff;
-}
-
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
-    background: #33a6cc;
-}
-
-.btn-primary:active, .btn-primary.active {
-    background: #007299;
-    box-shadow: none;
-}
 
 // Links
 .a {
@@ -32,7 +18,7 @@
 
 
 
-// headers
+// headers and p
 
 h1 {
   font-size: 32px;
@@ -51,6 +37,17 @@ p {
 }
 
 
+.h2bold {
+  font-weight:normal;
+  font-size: 22px;
+}
+
+.plight {
+  font-weight:lighter;
+}
+
+
+
 // Custom Classes
 .title-box {
 margin-top: 20px;
@@ -58,7 +55,7 @@ margin-bottom: 20px;
 }
 
 .sub-title-box {
-margin-bottom: 80px;
+margin-bottom: 20px;
 }
 
 .middle-content {
@@ -78,9 +75,26 @@ margin-bottom: 80px;
   background-color: white;
 }
 
-// Buttons Custom Blue BG
-.blue-bg {
-  background-color: $bg-blue;
+
+// Buttons
+
+.obbtn {
+border: 1 solid;
+letter-spacing: 1px;
+border-radius: 10px;
+border: 1 solid;
+letter-spacing: 1px;
+// text-transform: uppercase;
+border-radius: 10px;
+background: $button-green;
+color: $font-white;
+}
+
+.obbtn:hover {
+opacity:1.2;
+background: $bg-blue;
+color: $font-white;
+
 }
 
 
@@ -88,6 +102,10 @@ margin-bottom: 80px;
   width: 175px;
   height:45px;
   font-size: 24px;
+  background-color:button-green;
+  border-color: $button-green;
+  color: $font-white;
+
 }
 
 .rexit {
@@ -97,53 +115,50 @@ margin-bottom: 80px;
   background-color:transparent;
   border-color: $button-green;
   color: $button-green;
-  &:hover {
-    background-color:$button-green;
-    border-color: $button-green;
-    color: $font-white;
-    }
+
 }
 
 .sign-in {
   width: 175px;
-  height:45px;
+  height:40px;
   font-size: 16px;
   background-color:$button-green;
   border-color: $button-green;
   color: $font-white;
-   &:hover {
-    background-color:$font-white;
-    border-color: $button-green;
-    color: $button-green;
-    }
+
 }
 
 .sign-in-fb {
   width: 175px;
-  height:45px;
+  height:40px;
   font-size: 16px;
   color: #16BA89;
   background-color:transparent;
   border-color: $button-green;
+  text-align: center;
+  vertical-align: middle;
+
 }
 
 .flow-selected {
   width: 150px;
-  height:35px;
-  opacity:0.8;
+  height: 35px;
   font-size: 16px;
   background-color:$selectblue;
+  border-color: $selectblue;
 
 }
 
 .flow-unselected {
   width: 150px;
   height:35px;
-  background-color:$font-white;
+  background-color:transparent;
   border-color: $selectblue;
   color: $selectblue;
   font-size: 16px;
 }
+
+
 
 .breakies {
   padding:0;
@@ -190,6 +205,7 @@ margin-bottom: 80px;
   width: 200px;
 }
 
+
 .stats-container {
   position: relative;
   display: flex;
@@ -205,6 +221,40 @@ margin-bottom: 80px;
 .time-stats {
   margin-top: 20px;
 }
+
+// Home
+.homey {
+background: image("riverforest.jpg");
+background-size: 100%;
+margin-bottom:20px;
+}
+
+// Content-Slider
+.obcarousel {
+  background-opacity:0.5;
+  margin-bottom:30px;
+
+}
+
+.carousel-control.right, .carousel-control.left {
+  background-image:none;
+
+}
+
+.carousel-caption {
+    top: 0;
+    bottom: auto;
+}
+.img-carousel {
+      opacity: 0.5;
+
+}
+
+// Statistics
+.stats {
+  height: 400px;
+  width: 500px;
+
 
 .time-spent {
   margin-top: 10px;
