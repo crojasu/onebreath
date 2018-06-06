@@ -2,7 +2,20 @@
 
 class TimerSessionsController < ApplicationController
   def index
+    @navbar_render = true
     @timer_sessions = TimerSession.all
+
+    @stats = {}
+    @timer_sessions.each do |timer_session|
+      timer_session.breaks.each do |b|
+        if @stats[b.activity.name].present?
+          @stats[b.activity.name] += timer_session.preset.break_duration
+        else
+          @stats[b.activity.name] = timer_session.preset.break_duration
+        end
+      end
+    end
+    @stats = @stats.sort_by {|key, value| value}.reverse
   end
 
   def show
@@ -30,14 +43,15 @@ class TimerSessionsController < ApplicationController
   end
 
   def stats
+    @navbar_render = true
     @timer_session = TimerSession.find(params[:id])
     if @timer_session.breaks.first == nil
       redirect_to timer_session_path(@timer_session)
     end
 
     @stats = {
-      "Workday" => @timer_session.preset.working_day,
-      "Focused time" => @timer_session.preset.focus_timer.to_i * @timer_session.breaks.count.to_i
+      # "Workday" => @timer_session.preset.working_day * 60,
+      "Focusing" => @timer_session.preset.focus_timer.to_i * @timer_session.breaks.count.to_i
     }
     @timer_session.breaks.each do |b|
       if @stats[b.activity.name].present?
