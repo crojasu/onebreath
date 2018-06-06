@@ -21,6 +21,8 @@ gem 'countdown'
 gem 'jekyll-spotify'
 gem 'chartkick'
 gem 'groupdate'
+gem 'omniauth-facebook'
+
 
 
 group :development do
