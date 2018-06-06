@@ -8,7 +8,9 @@
 // Content-Slider
 // Statistics
 
-html,body { height: 100%;}
+html,body { height: 100%;
+margin-bottom:20px;
+}
 
 
 
@@ -20,6 +22,7 @@ html,body { height: 100%;}
 
 
 // headers and p
+
 
 h1 {
   font-size: 32px;
@@ -45,6 +48,11 @@ p {
 
 .plight {
   font-weight:lighter;
+}
+
+.pshadow {
+  text-shadow:0 0 1px transparent;
+
 }
 
 
@@ -206,10 +214,30 @@ color: $font-white;
   width: 200px;
 }
 
+.obopacity {
+  opacity: 0.6;
+}
+
 // Home
 .homey {
-background: image("riverforest.jpg");
-background-size: 100%;
+  background: asset-data-url("riverforest.jpg") no-repeat center center fixed;
+
+   min-height: 100%;
+   /* Set rules to fill background */
+  min-height: 100%;
+
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.home-fonts {
+  color: black;
 }
 
 // Content-Slider
