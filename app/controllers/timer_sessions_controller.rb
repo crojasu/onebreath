@@ -3,6 +3,7 @@
 class TimerSessionsController < ApplicationController
   def index
     @navbar_render = true
+    @presets = Preset.where(user_id: current_user.id)
     @timer_sessions = TimerSession.all
     @stats = {}
     @timer_sessions.each do |timer_session|
@@ -12,9 +13,11 @@ class TimerSessionsController < ApplicationController
         else
           @stats[b.activity.name] = timer_session.preset.break_duration
         end
+
       end
     end
     @stats = @stats.sort_by {|key, value| value}.reverse
+
   end
 
   def show
