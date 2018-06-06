@@ -1,17 +1,17 @@
  <div class="col-xs-8 col-xs-offset-2 col-md-4 col-md-offset-4">
 	<div class="middle-content">
   	<%= simple_form_for [@preset], defaults: { input_html: { class: 'form-control' } } do |f| %>
-    <%= f.input :name, label:"Name your Flow"%>
-		<%= f.input :working_day, label: "How many hours would you like to work today?" %>
-		<%= f.input :focus_timer, label: "How many minutes per work session?" %>
-		<%= f.input :break_duration, label: "How many minutes per break session?" %>
+    <div id=name><%= f.input :name, label:"Name your Flow"%></div>
+		<div id=working_day><%= f.input :working_day, label: "How many hours would you like to work today?" %></div>
+		<div id=focus_timer><%= f.input :focus_timer, label: "How many minutes per work session?" %></div>
+		<div id=break_duration><%= f.input :break_duration, label: "How many minutes per break session?" %></div>
   </div>
 <!--
       <div class="action-buttons-box">
         <%= f.submit "Start Timer", :class=> "btn obbtn sign-in" %>
       </div> -->
       <div class="action-buttons-box">
-        <%= f.submit "Define Breaks", :class=> "btn obbtn sign-in-fb" %>       
+        <%= f.submit "Define Breaks", :class=> "btn obbtn sign-in-fb" %>
       </div>
     </div>
     <% end %>

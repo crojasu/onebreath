@@ -176,6 +176,7 @@ color: $font-white;
   border-color: $selectblue;
   color: $selectblue;
   font-size: 16px;
+  margin: 15px 0px 15px 0px;
 }
 
 
@@ -320,11 +321,39 @@ margin-bottom:20px;
   align-items: center;
   margin-bottom: 10px;
 }
-
+#name .form-control-label {
+  font-weight: lighter;
+}
+#working_day .slider-selection {
+  background: #00c48b;
+}
+#working_day .slider-track {
+  background: #022E47;
+}
+#working_day .form-control-label {
+  font-weight: lighter;
+}
+#break_duration .slider-selection {
+  background: #00c48b;
+}
+#break_duration .slider-track {
+  background: #022E47;
+}
+#break_duration .form-control-label {
+  font-weight: lighter;
+}
+#focus_timer .slider-track {
+  background: #022E47;
+}
+#focus_timer .slider-selection {
+  background: #00c48b;
+}
+#focus_timer .form-control-label {
+  font-weight: lighter;
+}
 .lifetime-container {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
