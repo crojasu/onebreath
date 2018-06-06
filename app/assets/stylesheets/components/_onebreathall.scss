@@ -8,7 +8,10 @@
 // Content-Slider
 // Statistics
 
-html,body { height: 100%;}
+html,body {
+  height: 100%;
+  margin-bottom: 150px;
+}
 
 
 // Links
@@ -163,7 +166,9 @@ color: $font-white;
 .breakies {
   padding:0;
   background-color:transparent;
+
 }
+
 
 .no-list {
  list-style-type: none;

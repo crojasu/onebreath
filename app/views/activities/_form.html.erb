@@ -7,20 +7,21 @@
 
 </div>
 
-<ul class "list-group" style="padding:0;">
+<p>Your breaks</p>
+
+<div class="col-xs-8 col-xs-offset-2">
+  <ul class="list-group" style="padding:0; margin-bottom:50px;">
 <% @preset.activities.each do |activity| %>
   <li class="list-group-item list-group-item-primary breakies" data-activity-id="<%= activity.id %>">
-
    <%= activity.name %>
   <br>
    <%= link_to "delete", activity,
       method: :delete, remote: true %>
 <% end %>
 </ul>
-
+</div>
 <div class="action-buttons-box">
   <%= link_to "Save Breaks", presets_path, class: "btn obbtn sign-in" %>
 </div>
-
 </div>
 
