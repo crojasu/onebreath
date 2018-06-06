@@ -9,13 +9,12 @@
 // Statistics
 
 html,body { height: 100%;
-margin-bottom:20px;
 }
 
 
 
 // Links
-.a {
+a {
   font-color:$font-white;
 }
 
@@ -51,8 +50,12 @@ p {
 }
 
 .pshadow {
-  text-shadow:0 0 1px transparent;
+  text-shadow:0 0 #fff;
 
+}
+
+.htransparent{
+  background:rgba(1,1,1,0.5);
 }
 
 
@@ -100,9 +103,13 @@ color: $font-white;
 }
 
 .obbtn:hover {
-opacity:1.2;
-background: $bg-blue;
+opacity:0.8;
+background: transparent;
 color: $font-white;
+
+}
+
+.home-button {
 
 }
 
@@ -220,21 +227,24 @@ color: $font-white;
 
 // Home
 .homey {
-  background: asset-data-url("riverforest.jpg") no-repeat center center fixed;
-
-   min-height: 100%;
-   /* Set rules to fill background */
-  min-height: 100%;
-
-  /* Set up proportionate scaling */
+  position: relative;
+  background: asset-data-url("riverforest.jpg") no-repeat center center fixed, linear-gradient(#eb01a5, #d13531);
+  background-size: cover;
   width: 100%;
-  height: auto;
+  height: 100%;
 
-  /* Set up positioning */
-  position: fixed;
-  top: 0;
-  left: 0;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(-225deg,#fff,#000);
+    opacity: 0.6;
+  }
 }
+
 
 .home-fonts {
   color: black;
