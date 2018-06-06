@@ -7,12 +7,10 @@ class TimerSessionsController < ApplicationController
     @stats = {}
     @timer_sessions.each do |timer_session|
       timer_session.breaks.each do |b|
-        if timer_session.preset.user == current_user
-          if @stats[b.activity.name].present?
-            @stats[b.activity.name] += timer_session.preset.break_duration
-          else
-            @stats[b.activity.name] = timer_session.preset.break_duration
-          end
+        if @stats[b.activity.name].present?
+          @stats[b.activity.name] += timer_session.preset.break_duration
+        else
+          @stats[b.activity.name] = timer_session.preset.break_duration
         end
       end
     end
