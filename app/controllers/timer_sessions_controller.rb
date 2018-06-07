@@ -2,11 +2,13 @@ require 'date'
 
 class TimerSessionsController < ApplicationController
   def index
+
     @navbar_render = true
     @timer_sessions = current_user.timer_sessions
     @stats = current_user.overall_stats
     @daily = current_user.today_activity_stats
     @total_focus = @total_break = @daily_focus = @daily_break = 0
+
     @timer_sessions.each do |timer_session|
       @total_focus += timer_session.preset.focus_timer * timer_session.breaks.length
       @total_break += timer_session.preset.break_duration * timer_session.breaks.length
@@ -15,6 +17,7 @@ class TimerSessionsController < ApplicationController
         @daily_break += timer_session.preset.break_duration * timer_session.breaks.length
       end
     end
+  @stats.unshift(["Focusing", @total_focus])
   end
 
   def show
@@ -47,7 +50,6 @@ class TimerSessionsController < ApplicationController
     if @timer_session.breaks.first == nil
       redirect_to timer_session_path(@timer_session)
     end
-
     @stats = {
       # "Workday" => @timer_session.preset.working_day * 60,
       "Focusing" => @timer_session.preset.focus_timer.to_i * @timer_session.breaks.count.to_i
@@ -59,6 +61,10 @@ class TimerSessionsController < ApplicationController
         @stats[b.activity.name] = @timer_session.preset.break_duration
       end
     end
+    @working_time = @timer_session.preset.working_day
+    @breaks_time = @timer_session.breaks.count.to_i * @timer_session.breaks.first.length.to_i
+    @focus_time = @timer_session.preset.focus_timer.to_i * @timer_session.breaks.count.to_i
+    @remaining_time = @working_time * 60 - @focus_time - @breaks_time
   end
 
 
