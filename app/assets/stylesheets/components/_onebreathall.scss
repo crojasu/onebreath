@@ -25,6 +25,7 @@ a {
 h1 {
   font-size: 32px;
   font-weight: normal;
+  text-shadow: none;
 }
 
 h2 {
@@ -37,6 +38,7 @@ h2 {
 p {
   font-size: 16px;
   font-weight: normal;
+  text-shadow: none;
 }
 
 .h1title {
@@ -55,6 +57,7 @@ p {
 .h2bold {
   font-weight:normal;
   font-size: 24px;
+  text-shadow: none;
 }
 
 .plight {
@@ -108,7 +111,6 @@ margin-bottom: 20px;
 {
   margin-bottom: 20px;
 }
-
 .white-container {
   background-color: white;
 }
@@ -153,7 +155,6 @@ color: $font-white;
     background-color: button-green;
     border-color: #16BA89;
     color: #FFFAF9;
-
 }
 
 .rexit {
@@ -427,4 +428,8 @@ margin-bottom:20px;
   border-radius: 0px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
+}
+// Navbar
+.bottom-blank {
+  height: 100px;
 }
