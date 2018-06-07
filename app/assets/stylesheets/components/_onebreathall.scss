@@ -12,19 +12,13 @@
 
 html,body {
   height: 100vh;
-  padding-top: 10px;
-  margin-bottom: 100px;
   background-image: linear-gradient(-285deg, #11476E, #007cd6);
 }
-
-
 
 // Links
 a {
   font-color:$font-white;
 }
-
-
 
 // headers and p
 
@@ -56,6 +50,7 @@ color: black;
 h1 {
   font-size: 32px;
   font-weight: normal;
+  text-shadow: none;
 }
 
 h2 {
@@ -68,6 +63,7 @@ h2 {
 p {
   font-size: 16px;
   font-weight: normal;
+  text-shadow: none;
 }
 
 .h1title {
@@ -86,6 +82,7 @@ p {
 .h2bold {
   font-weight:normal;
   font-size: 24px;
+  text-shadow: none;
 }
 
 .plight {
@@ -139,7 +136,6 @@ margin-bottom: 20px;
 {
   margin-bottom: 20px;
 }
-
 .white-container {
   background-color: white;
 }
@@ -184,7 +180,6 @@ color: $font-white;
     background-color: button-green;
     border-color: #16BA89;
     color: #FFFAF9;
-
 }
 
 .rexit {
@@ -326,7 +321,7 @@ color: $font-white;
 .homey {
 
   position: relative;
-  background: asset-data-url("riverforest.jpg") no-repeat center center fixed, linear-gradient(#eb01a5, #d13531);
+  background: asset-data-url("background_img.jpg");
   background-size: cover;
   width: 100%;
   height: 100%;
@@ -338,7 +333,6 @@ color: $font-white;
     right: 0;
     bottom: 0;
     left: 0;
-    background-image: linear-gradient(-225deg,#fff,#000);
     opacity: 0.6;
   }
 }
@@ -346,8 +340,6 @@ color: $font-white;
 
 .home-fonts {
   color: black;
-
-background: image("riverforest.jpg");
 background-size: 100%;
 margin-bottom:20px;
 
@@ -391,7 +383,19 @@ margin-bottom:20px;
   flex-direction: column;
   align-items: center;
 }
+<<<<<<< HEAD
 
+=======
+.lifetime-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+// Sliders
+>>>>>>> f7cd8871c87312139630455d514c3aa57492ccb6
 #name .form-control-label {
   font-weight: lighter;
 }
@@ -404,6 +408,9 @@ margin-bottom:20px;
 #working_day .form-control-label {
   font-weight: lighter;
 }
+#working_day .slider-handle {
+  background: #00c48b;
+}
 #break_duration .slider-selection {
   background: #00c48b;
 }
@@ -412,6 +419,9 @@ margin-bottom:20px;
 }
 #break_duration .form-control-label {
   font-weight: lighter;
+}
+#break_duration .slider-handle {
+  background: #00c48b;
 }
 #focus_timer .slider-track {
   background: #022E47;
@@ -422,11 +432,8 @@ margin-bottom:20px;
 #focus_timer .form-control-label {
   font-weight: lighter;
 }
-.lifetime-container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+#focus_timer .slider-handle {
+  background: #00c48b;
 }
 
 // Avatar
@@ -449,4 +456,8 @@ margin-bottom:20px;
   border-radius: 0px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
+}
+// Navbar
+.bottom-blank {
+  height: 100px;
 }

@@ -16,6 +16,8 @@ class PagesController < ApplicationController
   end
 
   def info
+    @navbar_render = true
+    @user = current_user
   end
 
 
