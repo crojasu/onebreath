@@ -24,7 +24,7 @@
     <%= column_chart(@stats, ytitle: "Time (minutes)", xtitle: "Activity", colors: ["#000", "#b00"])  %>
     <div class="time-spent">
       <% @stats.each do |key, value| %>
-        <%= "Time spent on #{key} = #{value} minutes" %>
+        <%= "#{value} minutes #{key}" %>
         <br>
       <% end %>
     </div>
