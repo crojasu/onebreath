@@ -19,7 +19,8 @@ class TimerSessionsController < ApplicationController
     end
   @stats.unshift(["Focusing", @total_focus])
   @daily["Focusing"] = @daily_focus
-  @daily.values.sort.reverse
+  @daily = @daily.to_a.sort_by { |stat| -stat.last}.to_h
+
   end
 
   def show
