@@ -18,10 +18,7 @@
       <% end %>
       <%= "minutes" %>
     </div>
-    <br>
-
   </div>
-  <br>
   <div class="stats-graph">
     <%= column_chart(@stats, ytitle: "Time (minutes)", xtitle: "Activity", colors: ["#000", "#b00"])  %>
     <div class="time-spent">
@@ -31,7 +28,8 @@
       <% end %>
     </div>
   </div>
-
+      <br>
+      <br>
   <div class="action-buttons-box">
     <%= link_to "Continue", timer_session_path(@timer_session), :class=> "btn obbtn rexit" %>
   </div>
