@@ -18,6 +18,7 @@ class TimerSessionsController < ApplicationController
       end
     end
   @stats.unshift(["Focusing", @total_focus])
+  @daily["Focusing"] = @daily_focus
   end
 
   def show

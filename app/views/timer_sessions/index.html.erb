@@ -24,11 +24,8 @@
       <%= @daily_focus + @daily_break %>
       <%end %>
       <div class="stats-graph">
-      <%= pie_chart(@stats, ytitle: "Time (minutes)", xtitle: "Activity", colors: [ "#00008B", "#4B0082", "#8B0000", "#008000"])  %>
+      <%= pie_chart(@daily, ytitle: "Time (minutes)", xtitle: "Activity", colors: [ "#00008B", "#4B0082", "#8B0000", "#008000"])  %>
       <% if @daily_focus != nil && @daily_break != nil %>
-        <%= "Total minutes spent on Focusing = " %>
-        <%= @daily_focus %>
-        <br>
         <% @daily.each do |key, value| %>
           <%= "Total minutes spent on #{key} = #{value}" %>
           <br>
