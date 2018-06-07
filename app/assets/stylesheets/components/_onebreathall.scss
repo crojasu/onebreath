@@ -15,6 +15,14 @@ html,body {
   background-image: linear-gradient(-285deg, #11476E, #007cd6);
 }
 
+body::before {
+content: "";
+background-image: linear-gradient(-285deg, #11476E, #007cd6);
+height: 100%;
+width: 100%;
+position: fixed;
+}
+
 // Links
 a {
   font-color:$font-white;
@@ -55,14 +63,14 @@ h1 {
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: normal;
 
 }
 
 
 p {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: normal;
   text-shadow: none;
 }
@@ -117,25 +125,53 @@ p {
 // Custom Classes
 .title-box {
 margin-top: 20px;
-margin-bottom: 20px;
+margin-bottom: 10px;
 }
 
 .sub-title-box {
-margin-bottom: 20px;
+margin-bottom: 10px;
 }
 
 .middle-content {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   opacity: 0.9;
+  font-size: 28px;
+  font-weight: 500 !important;
 }
 .presets-box {
   margin-bottom: 10px;
 }
 
 
+.presets-box-button {
+  background-color: $button-green;
+  border: 1px solid #16BA89;
+  padding: 10px 40px;
+  border-radius: 35px;
+
+  p {
+    margin: 0;
+    color: white;
+  }
+}
+.presets-box-button {
+
+}
+.preset-box-content {
+  flex: 1;
+  text-align: left;
+}
+.preset-link {
+  flex: 1;
+}
+.flex {
+  display: flex;
+}
+
+
 .action-buttons-box
 {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .white-container {
   background-color: white;
@@ -178,13 +214,13 @@ color: $font-white;
     text-transform: uppercase;
     padding: 12px;
     font-size: 16px;
-    background-color: button-green;
-    border-color: #16BA89;
-    color: #FFFAF9;
+    background-color: white;
+    color: #17ba89;
+    font-weight: 700;
+
 }
 
 .rexit {
-  width: 175px;
     width: 175px;
     height: 45px;
     text-transform: uppercase;
@@ -196,6 +232,8 @@ color: $font-white;
     color: #ffffff;
 
 }
+
+
 
 .sign-in {
   width: 175px;
@@ -218,6 +256,12 @@ color: $font-white;
   vertical-align: middle;
 
 }
+
+.cta {
+  background: white;
+  color: $button-green;
+}
+
 
 .flow-unselected {
   width: 150px;
@@ -248,9 +292,18 @@ color: $font-white;
 }
 
 .breakies {
-  padding:0;
+  // padding:0;
   background-color:transparent;
-
+  border: none;
+}
+.activity-item {
+    height: 49px;
+    font-weight:  bold;
+    background: #16BA89;
+    display:  flex;
+    align-items:  center;
+    padding: 10px;
+    justify-content:  space-between;
 }
 
 .nomargin {
@@ -400,18 +453,11 @@ margin-bottom:20px;
 }
 
 // Sliders
-
-#name .form-control-label {
-  font-weight: lighter;
-}
 #working_day .slider-selection {
   background: #00c48b;
 }
 #working_day .slider-track {
   background: #022E47;
-}
-#working_day .form-control-label {
-  font-weight: lighter;
 }
 #working_day .slider-handle {
   background: #00c48b;
@@ -422,9 +468,6 @@ margin-bottom:20px;
 #break_duration .slider-track {
   background: #022E47;
 }
-#break_duration .form-control-label {
-  font-weight: lighter;
-}
 #break_duration .slider-handle {
   background: #00c48b;
 }
@@ -433,9 +476,6 @@ margin-bottom:20px;
 }
 #focus_timer .slider-selection {
   background: #00c48b;
-}
-#focus_timer .form-control-label {
-  font-weight: lighter;
 }
 #focus_timer .slider-handle {
   background: #00c48b;

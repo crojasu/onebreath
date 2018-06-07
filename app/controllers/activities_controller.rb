@@ -3,6 +3,7 @@ class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:show]
 
   def index
+    @navbar_render = true
     @activities = @preset.activities
     @activity = Activity.new
     @default_activities = @preset.activities
