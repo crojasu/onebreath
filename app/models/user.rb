@@ -28,4 +28,32 @@ class User < ApplicationRecord
 
     return user
   end
+
+  def today_activity_stats
+    daily = {}
+    timer_sessions.each do |timer_session|
+      timer_session.breaks.where(created_at: Time.zone.today.beginning_of_day..Time.zone.today.end_of_day).each do |b|
+        if daily[b.activity.name].present?
+          daily[b.activity.name] += timer_session.preset.break_duration
+        else
+          daily[b.activity.name] = timer_session.preset.break_duration
+        end
+      end
+    end
+    daily
+  end
+
+  def overall_stats
+    stats = {}
+    timer_sessions.each do |timer_session|
+      timer_session.breaks.each do |b|
+        if stats[b.activity.name].present?
+          stats[b.activity.name] += timer_session.preset.break_duration
+        else
+          stats[b.activity.name] = timer_session.preset.break_duration
+        end
+      end
+    end
+    stats.sort_by {|key, value| value}.reverse
+  end
 end

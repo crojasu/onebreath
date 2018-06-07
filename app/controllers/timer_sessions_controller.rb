@@ -1,23 +1,24 @@
-
+require 'date'
 
 class TimerSessionsController < ApplicationController
   def index
-    @navbar_render = true
-    @presets = Preset.where(user_id: current_user.id)
-    @timer_sessions = TimerSession.all
-    @stats = {}
-    @timer_sessions.each do |timer_session|
-      timer_session.breaks.each do |b|
-        if @stats[b.activity.name].present?
-          @stats[b.activity.name] += timer_session.preset.break_duration
-        else
-          @stats[b.activity.name] = timer_session.preset.break_duration
-        end
 
+    @navbar_render = true
+    @timer_sessions = current_user.timer_sessions
+    @stats = current_user.overall_stats
+    @daily = current_user.today_activity_stats
+    @total_focus = @total_break = @daily_focus = @daily_break = 0
+
+    @timer_sessions.each do |timer_session|
+      @total_focus += timer_session.preset.focus_timer * timer_session.breaks.length
+      @total_break += timer_session.preset.break_duration * timer_session.breaks.length
+      if timer_session.created_at.between?(Time.zone.today.beginning_of_day, Time.zone.today.end_of_day)
+        @daily_focus += timer_session.preset.focus_timer * timer_session.breaks.length
+        @daily_break += timer_session.preset.break_duration * timer_session.breaks.length
       end
     end
-    @stats = @stats.sort_by {|key, value| value}.reverse
-
+  @stats.unshift(["Focusing", @total_focus])
+  @daily["Focusing"] = @daily_focus
   end
 
   def show
@@ -50,7 +51,6 @@ class TimerSessionsController < ApplicationController
     if @timer_session.breaks.first == nil
       redirect_to timer_session_path(@timer_session)
     end
-
     @stats = {
       # "Workday" => @timer_session.preset.working_day * 60,
       "Focusing" => @timer_session.preset.focus_timer.to_i * @timer_session.breaks.count.to_i
@@ -62,6 +62,10 @@ class TimerSessionsController < ApplicationController
         @stats[b.activity.name] = @timer_session.preset.break_duration
       end
     end
+    @working_time = @timer_session.preset.working_day
+    @breaks_time = @timer_session.breaks.count.to_i * @timer_session.breaks.first.length.to_i
+    @focus_time = @timer_session.preset.focus_timer.to_i * @timer_session.breaks.count.to_i
+    @remaining_time = @working_time * 60 - @focus_time - @breaks_time
   end
 
 
