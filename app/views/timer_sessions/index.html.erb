@@ -1,23 +1,37 @@
-  <% total_focus = 0%>
-  <% total_break = 0 %>
-  <% @timer_sessions.each do |timer_session| %>
-
-    <% total_focus += timer_session.preset.focus_timer * timer_session.breaks.length%>
-    <% total_break += timer_session.preset.break_duration * timer_session.breaks.length%>
-  <% end %>
 
 <div class="lifetime-container">
   <div class="lifetime-title">
-    <h1>Cumulative Stats</h1>
+    <h1>Lifetime Stats</h1>
   </div>
   <div class="lifetime-stats">
     <%= "Total seconds spent = " %>
-    <%= total_focus + total_break %>
+    <%= @total_focus + @total_break %>
     <br>
     <%= "Total seconds spent focusing = " %>
-    <%= total_focus %>
+    <%= @total_focus %>
     <br>
     <% @stats.each do |key, value| %>
+      <%= "Total seconds spent on #{key} = #{value}" %>
+      <br>
+    <% end %>
+  </div>
+    <div class="lifetime-title">
+    <h1>Daily Stats</h1>
+  </div>
+  <div class="daily-stats">
+    <% if @daily_focus != nil && @daily_break != nil %>
+      <%= "Total seconds spent = " %>
+      <%= @daily_focus + @daily_break %>
+    <% else %>
+      <%= "No stats for today" %>
+    <% end %>
+    <br>
+    <% if @daily_focus != nil && @daily_break != nil %>
+      <%= "Total seconds spent focusing = " %>
+      <%= @daily_focus %>
+    <% end %>
+    <br>
+    <% @daily.each do |key, value| %>
       <%= "Total seconds spent on #{key} = #{value}" %>
       <br>
     <% end %>

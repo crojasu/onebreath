@@ -1,23 +1,20 @@
-
+require 'date'
 
 class TimerSessionsController < ApplicationController
   def index
     @navbar_render = true
-    @presets = Preset.where(user_id: current_user.id)
-    @timer_sessions = TimerSession.all
-    @stats = {}
+    @timer_sessions = current_user.timer_sessions
+    @stats = current_user.overall_stats
+    @daily = current_user.today_activity_stats
+    @total_focus = @total_break = @daily_focus = @daily_break = 0
     @timer_sessions.each do |timer_session|
-      timer_session.breaks.each do |b|
-        if @stats[b.activity.name].present?
-          @stats[b.activity.name] += timer_session.preset.break_duration
-        else
-          @stats[b.activity.name] = timer_session.preset.break_duration
-        end
-
+      @total_focus += timer_session.preset.focus_timer * timer_session.breaks.length
+      @total_break += timer_session.preset.break_duration * timer_session.breaks.length
+      if timer_session.created_at.between?(Time.zone.today.beginning_of_day, Time.zone.today.end_of_day)
+        @daily_focus += timer_session.preset.focus_timer * timer_session.breaks.length
+        @daily_break += timer_session.preset.break_duration * timer_session.breaks.length
       end
     end
-    @stats = @stats.sort_by {|key, value| value}.reverse
-
   end
 
   def show
