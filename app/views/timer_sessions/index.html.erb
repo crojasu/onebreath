@@ -1,35 +1,49 @@
-  <% total_focus = 0%>
-  <% total_break = 0 %>
-  <% @timer_sessions.each do |timer_session| %>
-
-    <% total_focus += timer_session.preset.focus_timer * timer_session.breaks.length%>
-    <% total_break += timer_session.preset.break_duration * timer_session.breaks.length%>
-  <% end %>
-
+<%= javascript_include_tag "https://www.gstatic.com/charts/loader.js", "chartkick" %>
 <div class="lifetime-container">
   <div class="lifetime-title">
-    <h1>Cumulative Stats</h1>
+    <h1>Lifetime Stats</h1>
   </div>
   <div class="lifetime-stats">
-    <%= "Total seconds spent = " %>
-    <%= total_focus + total_break %>
-    <br>
-    <%= "Total seconds spent focusing = " %>
-    <%= total_focus %>
-    <br>
+    <%= "Total minutes spent = " %>
+    <%= @total_focus + @total_break %>
+    <div class="stats-graph">
+    <%= pie_chart(@stats, ytitle: "Time (minutes)", xtitle: "Activity", colors: [ "#00008B", "#4B0082", "#8B0000", "#008000"])  %>
     <% @stats.each do |key, value| %>
       <%= "Total seconds spent on #{key} = #{value}" %>
       <br>
     <% end %>
+    </div>
+    <br>
   </div>
-  <div class="lifetime-exit">
+  <div class="lifetime-title">
+    <h1>Daily Stats</h1>
+  </div>
+  <div class="daily-stats">
+    <% if @daily_focus != nil && @daily_break != nil %>
+      <%= "Total minutes spent = " %>
+      <%= @daily_focus + @daily_break %>
+      <%end %>
+      <div class="stats-graph">
+      <%= pie_chart(@daily, ytitle: "Time (minutes)", xtitle: "Activity", colors: [ "#00008B", "#4B0082", "#8B0000", "#008000"])  %>
+      <% if @daily_focus != nil && @daily_break != nil %>
+        <% @daily.each do |key, value| %>
+          <%= "Total minutes spent on #{key} = #{value}" %>
+          <br>
+        <% end %>
+      <% else %>
+        <%= "No stats for today" %>
+      <% end %>
+    <br>
+    <div class="lifetime-exit">
     <% if @timer_sessions.last != nil %>
       <%= link_to "Stats for last timer session", stats_path(@timer_sessions.last) %>
     <% end %>
   </div>
 
-
   <div class="action-buttons-box">
     <%= link_to "Exit", presets_path, :class=> "btn obbtn rexit" %>
   </div>
+    </div>
+  </div>
 </div>
+

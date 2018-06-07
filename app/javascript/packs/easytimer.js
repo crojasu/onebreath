@@ -1,7 +1,6 @@
 import Timer from 'easytimer'
 
 function redirectToBreakNew(timer) {
-  console.log(targetAchieved(timer))
   if(targetAchieved(timer)){
     const dataSetTimer = document.getElementById("timer2").dataset
     const idSession = dataSetTimer.sessionid
@@ -20,12 +19,9 @@ function targetAchieved(timer) {
   const dataSetLimits = document.getElementById("timer2").dataset
   const focusLimit = dataSetLimits.limit
   const breakLimit = dataSetLimits.breaklimit
-    console.log(breakLimit)
   if (breakLimit) {
     return (timer.seconds === 0) ? true : false;
   } else {
-    console.log(timer.seconds)
-    console.log(parseInt(focusLimit))
     return (timer.seconds === 0) ? true : false;
   }
 }
