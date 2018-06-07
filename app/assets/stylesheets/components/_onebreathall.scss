@@ -9,6 +9,7 @@
 // Statistics
 // Avatars
 
+// background
 
 html,body {
   height: 100vh;
@@ -78,13 +79,11 @@ p {
 .h1title {
    margin-bottom: 20px;
     text-transform: uppercase;
-    letter-spacing: 3px;
 }
 
 .h2subtitle {
     margin-bottom: 38px;
     text-transform: uppercase;
-    letter-spacing: 3px;
 
 }
 
@@ -102,7 +101,9 @@ p {
  font-size: 18px;
  font-weight: normal;
 }
-
+.title-home-page {
+  color: #0d2736;
+}
 
 .pshadow {
 }
