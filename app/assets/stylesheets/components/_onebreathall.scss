@@ -61,12 +61,18 @@ p {
 
 .h2bold {
   font-weight:normal;
-  font-size: 22px;
+  font-size: 24px;
 }
 
 .plight {
   font-weight:lighter;
 }
+
+.pbold {
+ font-size: 18px;
+ font-weight: normal;
+}
+
 
 .pshadow {
 }
@@ -114,6 +120,10 @@ margin-bottom: 20px;
   background-color: white;
 }
 
+.spotidiv {
+  opacity: 0.8;
+  border-radius:10px;
+}
 
 // Buttons
 
@@ -189,12 +199,14 @@ color: $font-white;
 
 }
 
-.flow-selected {
+.flow-unselected {
   width: 150px;
   height: 35px;
   font-size: 16px;
-  background-color:$selectblue;
-  border-color: $selectblue;
+  color: #16BA89;
+  background-color:transparent;
+  border-color: $button-green;
+
 
 }
 
@@ -203,16 +215,17 @@ color: $font-white;
   height:35px;
   background-color:transparent;
   border-color: $selectblue;
-  color: $selectblue;
+  color: $font-white;
   font-size: 16px;
-  margin: 15px 0px 15px 0px;
+
   &:hover {
     background-color:$selectblue;
     color: $font-white;
   }
 }
-
-
+ .gimmemargin {
+ margin: 15px 0px 15px 0px;
+}
 
 .breakies {
   padding:0;
@@ -220,7 +233,9 @@ color: $font-white;
 
 }
 
-
+.nomargin {
+  margin-bottom:10px;
+}
 .no-list {
  list-style-type: none;
  list-style: none;
