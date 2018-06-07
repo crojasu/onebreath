@@ -29,7 +29,10 @@
         <div class="middle-content spotidiv">
         <p class="pbold">Music for your break<p>
 
-        <iframe src="https://open.spotify.com/embed?uri=<%= @cancion %>" width="250" height="85" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <iframe src="https://open.spotify.com/embed?uri=<%= @cancion %>" width="250" height="85" frameborder="0" allowtransparency="true" allow="encrypted-media" style="border:none;"></iframe>
+
+
+
       </div>
       <div class="action-buttons-box">
           <%= link_to "Exit", presets_path,  :class=> "btn obbtn rexit" %>

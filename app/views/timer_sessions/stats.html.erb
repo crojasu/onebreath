@@ -1,9 +1,10 @@
 <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js", "chartkick" %>
-<div class="stats-title">
-    <h4>Time Management</h4>
-  </div>
+
 
 <div class="stats-container">
+  <div class="stats-title">
+    <h4>Time Management</h4>
+  </div>
   <div class="time-stats">
     <div class="time">
       <%= "Time allocated for today = " %>
@@ -23,18 +24,18 @@
     <%= column_chart(@stats, ytitle: "Time (minutes)", xtitle: "Activity", colors: ["#000", "#b00"])  %>
     <div class="time-spent">
       <% @stats.each do |key, value| %>
-        <%= "Time spent on #{key} = #{value} minutes" %>
+        <%= "#{value} minutes #{key}" %>
         <br>
       <% end %>
     </div>
   </div>
-      <br>
-      <br>
-  <div class="action-buttons-box">
-    <%= link_to "Continue", timer_session_path(@timer_session), :class=> "btn obbtn rexit" %>
-  </div>
-  <div class="action-buttons-box">
-    <%= link_to "Exit to home", presets_path, :class=> "btn obbtn rexit" %>
+  <div class="graph-buttons">
+    <div class="action-buttons-box">
+      <%= link_to "Continue", timer_session_path(@timer_session), :class=> "btn obbtn rexit" %>
+    </div>
+    <div class="action-buttons-box">
+      <%= link_to "Exit to home", presets_path, :class=> "btn obbtn rexit" %>
+    </div>
   </div>
   <div class="bottom-blank">
   </div>
