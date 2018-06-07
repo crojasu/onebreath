@@ -393,7 +393,11 @@ margin-bottom:20px;
   flex-direction: column;
   align-items: center;
 }
+.graph-buttons {
+  position: fixed;
+  bottom: 60px;
 
+}
 
 // Sliders
 
