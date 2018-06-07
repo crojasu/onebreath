@@ -7,20 +7,23 @@
     <div class="row">
       <div class="col-xs-12 col-md-6 col-md-offset-3">
         <div class="title-box">
-          <h1 class="pshadow">Hi <%= @user.first_name %>
-            <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
-            <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <h1 class="h1title">
+
           </h1>
 
-          <h2 class="pshadow">Your Dashboard  </h2>
-
+          <h2 class="h2subtitle">
+            <%= @user.first_name %>'s <br> dashboard <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
+            <%= image_tag avatar_url, class: "obavatar-large", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+            </h2>
+          <p class="pquote"><script type="text/javascript" src="https://www.brainyquote.com/link/quotebr.js"></script></p>
         </div>
       </div>
     </div>
 
 
   <div class="col-xs-12 col-md-6 col-md-offset-3">
-    <div class="obcarousel">
+
+   <div class="obcarousel">
       <%= render "sliderdash" %>
     </div>
   </div>

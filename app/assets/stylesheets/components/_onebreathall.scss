@@ -7,11 +7,14 @@
 // Home Classes
 // Content-Slider
 // Statistics
+// Avatars
 
 
 html,body {
-  height: 100%;
+  height: 100vh;
+  padding-top: 10px;
   margin-bottom: 100px;
+  background-image: linear-gradient(-285deg, #11476E, #007cd6);
 }
 
 
@@ -33,7 +36,8 @@ h1 {
 
 h2 {
   font-size: 24px;
-  font-weight: lighter;
+  font-weight: normal;
+
 }
 
 
@@ -42,6 +46,18 @@ p {
   font-weight: normal;
 }
 
+.h1title {
+   margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.h2subtitle {
+    margin-bottom: 38px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+
+}
 
 .h2bold {
   font-weight:normal;
@@ -53,7 +69,14 @@ p {
 }
 
 .pshadow {
-  text-shadow:0 0 #fff;
+}
+.pquote {
+    /* letter-spacing: 1px; */
+    // line-height: 30px;
+    /* margin-bottom: 33px; */
+    font-weight: normal;
+    font-size: 14px;
+    color: #ffffff3b;
 
 }
 
@@ -101,7 +124,7 @@ border-radius: 10px;
 border: 1 solid;
 letter-spacing: 1px;
 // text-transform: uppercase;
-border-radius: 10px;
+border-radius: 30px;
 background: $button-green;
 color: $font-white;
 }
@@ -119,22 +142,28 @@ color: $font-white;
 
 
 .resume {
-  width: 175px;
-  height:45px;
-  font-size: 24px;
-  background-color:button-green;
-  border-color: $button-green;
-  color: $font-white;
+    width: 175px;
+    height: 45px;
+    text-transform: uppercase;
+    padding: 12px;
+    font-size: 16px;
+    background-color: button-green;
+    border-color: #16BA89;
+    color: #FFFAF9;
 
 }
 
 .rexit {
   width: 175px;
-  height:45px;
-  font-size: 24px;
-  background-color:transparent;
-  border-color: $button-green;
-  color: $button-green;
+    width: 175px;
+    height: 45px;
+    text-transform: uppercase;
+    padding: 12px;
+    height: 45px;
+    font-size: 16px;
+    background-color: transparent;
+    border-color: #16BA89;
+    color: #ffffff;
 
 }
 
@@ -372,4 +401,26 @@ margin-bottom:20px;
 }
 #focus_timer .slider-handle {
   background: #00c48b;
+}
+
+// Avatar
+.obavatar {
+  width: 30px;
+  border-radius: 50%;
+}
+.obavatar-large {
+  width: 50px;
+  border-radius: 50%;
+}
+.obavatar-bordered {
+  width: 30px;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: white 1px solid;
+}
+.obavatar-square {
+  width: 30px;
+  border-radius: 0px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: white 1px solid;
 }
