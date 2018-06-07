@@ -25,7 +25,7 @@ position: fixed;
 
 // Links
 a {
-  font-color:$font-white;
+  color:$font-white;
 }
 
 // headers and p
@@ -69,8 +69,9 @@ p {
   text-shadow: none;
 }
 
-.plight {
-  font-weight:lighter;
+.psmaller {
+  font-weight:normal;
+  font-size: 18px;
 }
 
 .pbold {
@@ -88,7 +89,10 @@ p {
     font-weight: normal;
     font-size: 14px;
     color: #ffffff3b;
+}
 
+.dashbox {
+text-align:center;
 
 }
 
