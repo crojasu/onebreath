@@ -31,9 +31,9 @@
       <div class="presets-box presets-box-button">
           <div class="flex preset-box-content">
             <%= link_to preset_timer_sessions_path(preset), method: :post, class: "preset-link" do %>
-              <p class="pbold"><%= preset.name %></p>
+              <p class="pbold2"><%= preset.name %></p>
             <% end %>
-            <div>
+            <div class="button-presets-action">
               <%= link_to edit_preset_path(preset) do %>
                 <i class="far fa-edit whiteicon"></i>
               <% end %>
@@ -47,7 +47,7 @@
       <div class="presets-box presets-box-button">
         <div class="flex preset-box-content">
           <%= link_to new_preset_path, :class=> "" do %>
-            <p class="pbold">Or create a new flow</p>
+            <p class="pbold2">Create a new flow</p>
           <% end %>
           <div>
       </div>
