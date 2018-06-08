@@ -1,5 +1,5 @@
 class Preset < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, optional: true
   has_many :timer_sessions, dependent: :destroy
   has_many :activities,  dependent: :destroy
   has_many :breaks, through: :timer_sessions

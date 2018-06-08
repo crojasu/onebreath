@@ -17,6 +17,16 @@
     </div>
   <div class="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-4">
     <div class="middle-content">
+      <div class="presets-box presets-box-button">
+          <div class="flex preset-box-content">
+            <%= link_to preset_timer_sessions_path(@pomodoro), method: :post, class: "preset-link" do %>
+              <p class="pbold"><%= @pomodoro.name %></p>
+            <% end %>
+            <div>
+             <%= image_tag "tomato.svg", class: "white-svg"%>
+            </div>
+          </div>
+      </div>
       <% @presets.each do |preset| %>
       <div class="presets-box presets-box-button">
           <div class="flex preset-box-content">
