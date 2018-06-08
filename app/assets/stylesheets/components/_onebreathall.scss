@@ -46,6 +46,10 @@ color: black;
 
 }
 
+.white-svg {
+  height: 18px;
+}
+
 .daily-stats {
  padding: 40px 0px;
 text-align: center;
@@ -169,6 +173,7 @@ margin-bottom: 10px;
 }
 .preset-link {
   flex: 1;
+  font-weight: bolder;
 }
 .flex {
   display: flex;
