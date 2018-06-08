@@ -12,33 +12,30 @@
           <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
           <%= image_tag avatar_url, class: "obavatar-large", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <h2 class="h2subtitle">
-            Welcome <br> <%= @user.first_name %>
+            Welcome <%= @user.first_name %>
             </h2>
           <p class="pquote"><script type="text/javascript" src="https://www.brainyquote.com/link/quotebr.js"></script></p>
+          <br>
         </div>
       </div>
     </div>
 
 
-  <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3">
+  <div class="col-xs-12 col-md-6 col-md-offset-3">
 
-   <div class="middle-content">
+   <div class="middle-content-dash">
     <div class="dashbox psmaller text-left">
-    <strong>What's new</strong> <br>
-    Hi <%= @user.first_name %>,
+    <strong>This week vs. Last week</strong>
     <br>
+    Meditation: +50% <br>
+    Focus time: +20% <br>
+    <br>
+    <strong>New Activities:</strong><br>
+    Social Media and Walking<br>
+    <br>
+    <strong>What's new:</strong> <br>
     We are soon going to integrate <a href="http://toggl.com">Toggl</a>!
     <br>
-    <strong>This week</strong>
-    Compared to the last week, these are the changes
-    <br>
-    Meditation: 50% increase <br>
-    Focus time: 20% increase <br>
-
-    New Activities <br>
-    Social media <br>
-    Walking
-
     </div>
   </div>
 </div>
