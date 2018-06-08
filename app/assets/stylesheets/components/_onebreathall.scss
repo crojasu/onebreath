@@ -46,9 +46,19 @@ color: black;
 
 }
 
+.button-presets-action {
+      height: 30px;
+    position: relative;
+    margin-bottom: 3px;
+    top: -11px;
+    left: 3px;
+}
+
 .white-svg {
-  height: 20px;
-  font-weight: bolder
+  height: 21px;
+    font-weight: bolder;
+    padding: -7px;
+    margin-bottom: 12px;
 }
 
 .daily-stats {
@@ -164,10 +174,10 @@ margin-bottom: 10px;
 .presets-box-button {
   background-color: $button-green;
   border: 1px solid #16BA89;
-  padding: 10px 40px;
-  border-radius: 35px;
-  box-shadow: 1px 2px #000000;
-
+  padding: 5px 40px;
+      margin: 31px 12px;
+    border-radius: 35px;
+    box-shadow: 3px 3px 13px 0px #0000004f;
   p {
     margin: 0;
     color: white;
@@ -178,6 +188,7 @@ margin-bottom: 10px;
 }
 .preset-box-content {
   flex: 1;
+  margin-top: 9px;
   text-align: left;
 }
 .preset-link {
@@ -314,13 +325,15 @@ color: $font-white;
   border: none;
 }
 .activity-item {
-    height: 49px;
-    font-weight:  bold;
+       height: 49px;
+    font-weight: bold;
     background: #16BA89;
-    display:  flex;
-    align-items:  center;
-    padding: 10px;
-    justify-content:  space-between;
+    display: flex;
+    border-radius: 3px;
+   box-shadow: 3px 3px 13px 0px #0000004f;
+    align-items: center;
+    padding: 15px;
+    justify-content: space-between;
 }
 
 .nomargin {

@@ -33,7 +33,7 @@
             <%= link_to preset_timer_sessions_path(preset), method: :post, class: "preset-link" do %>
               <p class="pbold"><%= preset.name %></p>
             <% end %>
-            <div>
+            <div class="button-presets-action">
               <%= link_to edit_preset_path(preset) do %>
                 <i class="far fa-edit whiteicon"></i>
               <% end %>
