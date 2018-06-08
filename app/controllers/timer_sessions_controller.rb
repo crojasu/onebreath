@@ -65,7 +65,11 @@ class TimerSessionsController < ApplicationController
       end
     end
     @working_time = @timer_session.preset.working_day
-    @breaks_time = @timer_session.breaks.count.to_i * @timer_session.breaks.first.length.to_i
+    if @timer_session.breaks.first != nil
+      @breaks_time = @timer_session.breaks.count.to_i * @timer_session.breaks.first.length.to_i
+    else
+      @breaks_time = 0
+    end
     @focus_time = @timer_session.preset.focus_timer.to_i * @timer_session.breaks.count.to_i
     @remaining_time = @working_time * 60 - @focus_time - @breaks_time
   end
