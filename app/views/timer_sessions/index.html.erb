@@ -5,13 +5,15 @@
     <h1>Lifetime Stats</h1>
   </div>
   <div class="lifetime-stats">
-    <%= "Total minutes spent = " %>
-    <%= @total_focus + @total_break %>
+    <div class="total-spent">
+      <%= "Total minutes spent = " %>
+      <%= @total_focus + @total_break %>
+    </div>
     <div class="container-chart">
     <div class="stats-graph">
     <%= pie_chart(@stats, ytitle: "Time (minutes)", xtitle: "Activity", colors: [ "#00008B", "#4B0082", "#8B0000", "#008000"])  %>
     <% @stats.each do |key, value| %>
-      <%= "Total minutes spent on #{key} = #{value}" %>
+      <%= "#{key}: #{value} minutes" %>
       <br>
     <% end %>
     </div>
@@ -23,14 +25,16 @@
   </div>
   <div class="daily-stats">
     <% if @daily_focus != nil && @daily_break != nil %>
-      <%= "Total minutes spent = " %>
-      <%= @daily_focus + @daily_break %>
+      <div class="total-spent">
+        <%= "Total minutes spent = " %>
+        <%= @daily_focus + @daily_break %>
+      </div>
       <%end %>
       <div class="stats-graph">
       <%= pie_chart(@daily, ytitle: "Time (minutes)", xtitle: "Activity", colors: [ "#00008B", "#4B0082", "#8B0000", "#008000"])  %>
       <% if @daily_focus != nil && @daily_break != nil %>
         <% @daily.each do |key, value| %>
-          <%= "Total minutes spent on #{key} = #{value}" %>
+          <%= "#{key}: #{value} minutes" %>
           <br>
         <% end %>
       <% else %>
