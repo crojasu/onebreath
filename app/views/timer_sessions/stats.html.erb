@@ -21,7 +21,7 @@
     </div>
   </div>
   <div class="stats-graph">
-    <%= column_chart(@stats, ytitle: "Time (minutes)", xtitle: "Activity", colors: ["#000", "#b00"])  %>
+    <%= column_chart(@stats, ytitle: "Time (minutes)", xtitle: "Activity", colors: ["#00008B", "#b00"])  %>
     <div class="time-spent">
       <% @stats.each do |key, value| %>
         <%= "#{value} minutes #{key}" %>
