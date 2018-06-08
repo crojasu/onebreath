@@ -45,24 +45,6 @@ ActiveRecord::Schema.define(version: 2018_06_06_152623) do
     t.index ["user_id"], name: "index_presets_on_user_id"
   end
 
-  create_table "statistics", force: :cascade do |t|
-    t.string "title"
-    t.string "type"
-    t.bigint "timer_session_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["timer_session_id"], name: "index_statistics_on_timer_session_id"
-  end
-
-  create_table "stats", force: :cascade do |t|
-    t.string "title"
-    t.string "type"
-    t.bigint "timer_session_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["timer_session_id"], name: "index_stats_on_timer_session_id"
-  end
-
   create_table "timer_sessions", force: :cascade do |t|
     t.bigint "preset_id"
     t.datetime "starts_at"
@@ -101,7 +83,5 @@ ActiveRecord::Schema.define(version: 2018_06_06_152623) do
   add_foreign_key "breaks", "activities"
   add_foreign_key "breaks", "timer_sessions"
   add_foreign_key "presets", "users"
-  add_foreign_key "statistics", "timer_sessions"
-  add_foreign_key "stats", "timer_sessions"
   add_foreign_key "timer_sessions", "presets"
 end
