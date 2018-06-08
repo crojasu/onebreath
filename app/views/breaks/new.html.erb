@@ -23,7 +23,7 @@
       </div>
      </div>
           <% @preset.activities.each do |act| %>
-       <div class="presets-box gimmemargin">
+       <div class="presets-box">
           <% @break.activity = act %>
           <%= simple_form_for [@timersession, @break] do |f| %>
           <%= f.association :activity, as: :hidden, value_method: :id %>
