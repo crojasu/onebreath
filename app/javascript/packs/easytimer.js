@@ -19,10 +19,11 @@ function targetAchieved(timer) {
   const dataSetLimits = document.getElementById("timer2").dataset
   const focusLimit = dataSetLimits.limit
   const breakLimit = dataSetLimits.breaklimit
+  console.log(timer.minutes)
   if (breakLimit) {
-    return (timer.seconds === 0) ? true : false;
+    return (timer.seconds === 0 && timer.minutes === 0) ? true : false;
   } else {
-    return (timer.seconds === 0) ? true : false;
+    return (timer.seconds === 0 && timer.minutes === 0) ? true : false;
   }
 }
 
@@ -43,7 +44,7 @@ function countDownSession() {
   const dataSetTime = document.getElementById("timer2").dataset
   const workingDay = dataSetTime.day
   const timer = new Timer();
-timer.start({countdown: true, startValues: {seconds: parseInt(workingDay)}});
+timer.start({countdown: true, startValues: {minutes: parseInt(workingDay)}});
 $('#timer2').html(timer.getTimeValues().toString());
 timer.addEventListener('secondsUpdated', function (e) {
     $('#timer2').html(timer.getTimeValues().toString());
